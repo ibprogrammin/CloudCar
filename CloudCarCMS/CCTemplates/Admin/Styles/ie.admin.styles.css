@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.GreenButton {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#7BC943, endColorstr=#96C943);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#7BC943, endColorstr=#96C943)";
+}
+
+.SaveButton {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#96C943, endColorstr=#7BC943);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#96C943, endColorstr=#7BC943)";
+}
+
+.DeleteButton {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ED4D1C, endColorstr=#ED1C24);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ED4D1C, endColorstr=#ED1C24)";
+}
+
+.GreenButton:Hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#7BC943, endColorstr=#a2c744);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#7BC943, endColorstr=#a2c744)";
+}
+
+.SaveButton:Hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#a2c744, endColorstr=#7BC943);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#a2c744, endColorstr=#7BC943)";
+}
+
+.DeleteButton:Hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ED661C, endColorstr=#ED1C24);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ED661C, endColorstr=#ED1C24)";
+}
+
+.form-real-upload { filter: alpha(opacity:0); }
+
+.wraptocenter span { display: inline-block; height: 100%; }

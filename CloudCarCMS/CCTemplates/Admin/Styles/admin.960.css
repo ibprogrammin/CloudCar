@@ -1,0 +1,22 @@
+﻿
+
+
+
+/* Notice Panel Styles */
+.notice-panel, .tip-panel {
+    position: static;
+    width: 925px;
+    margin: 0px 0px 20px 0px;
+    clear: both;
+}
+
+.tip-panel { margin-top: 20px; }
+.notice-panel { margin-bottom: 0px; }
+/* Notice Panel Styles */
+
+.user-greeting { display: none; }
+.search-control { display: none; }
+
+#daily-sales-chart, #monthly-sales-chart {
+     width: 940px;
+}

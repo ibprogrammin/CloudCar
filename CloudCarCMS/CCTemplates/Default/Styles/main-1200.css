@@ -1,0 +1,20 @@
+﻿header div nav a
+{
+	width: 180px;
+    margin: 0px -20px;
+}
+
+.search-control
+{
+    width: 230px;
+    right: 30px;
+}
+.search-button
+{
+    margin-left: -20px;
+}
+
+.secondary-content-section section
+{
+    width: 1150px;
+}

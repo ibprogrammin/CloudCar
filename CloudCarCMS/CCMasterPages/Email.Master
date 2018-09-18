@@ -1,0 +1,61 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Email.master.vb" Inherits="CloudCar.CCMasterPages.Email" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<!--
+version:   1.0
+author:    Daniel C. Sevitti
+email:     daniel@seriousmonkey.ca
+website:   http://seriousmonkey.ca
+-->
+<head id="Head1" runat="server">
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8; ?>" />
+
+<asp:ContentPlaceHolder ID="head" runat="server" />
+
+<title></title>
+
+<style type="text/css">
+    body { background-color: #F5F5F5; color: #666; }
+    h1, h2, h3, h4, h5 { font-weight: normal; font-family: lucida bright, Georgia, Serif; }
+    h1 { font-size: 48px; }
+    h2 { font-size: 24px; }    
+    p { font-size: 12px; line-height: 18px; font-family: Calibri, Verdana, Sans-Serif; }
+    table {  }
+    label { font-size: 12px; font-weight: bold; font-family: Calibri, Verdana, Sans-Serif; }
+    .LineItem { font-size: 12px; border-bottom: 1px solid #DDD; background-color: #F7F7F7; vertical-align: middle; padding: 5px 0px; font-family: Calibri, Verdana, Sans-Serif; }
+    .HeaderStyle { font-weight: bold; font-size: 18px; text-align: left; border-bottom: 10px solid #F5F5F5; }
+</style>
+
+</head>
+
+<body style="background-image: none;">
+
+<form id="frmMain" runat="server">
+
+<ajax:ToolkitScriptManager ID="tsmScriptManager" runat="server" CombineScripts="true" />
+
+<center>
+
+<table id="header-wrapper" style="width: 760px; margin-left: auto; margin-right: auto;">
+    <tr>
+        <td>
+            <br />
+            <a ID="Logo" runat="server" href="/home.html" title="" tabindex="4">
+                <img id="imgLogo" runat="server" src="" alt="" />
+            </a>
+            
+            <br /><br />
+            
+            <asp:ContentPlaceHolder ID="cphMainContent" runat="server" />
+            
+        </td>
+    </tr>
+</table>
+
+</center>
+</form>
+
+</body>
+</html>

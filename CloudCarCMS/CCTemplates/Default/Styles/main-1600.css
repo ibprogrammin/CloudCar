@@ -1,0 +1,11 @@
+﻿header, footer, .content-section
+{
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.store-navigation, .color-selection
+{
+    padding-left: 130px;
+    padding-right: 130px;
+}

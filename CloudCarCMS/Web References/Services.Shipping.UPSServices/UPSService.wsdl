@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost:10981/Services/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost:10981/Services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost:10981/Services/">
+      <s:element name="GetServiceTypeTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServiceTypeTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceTypeTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPickupType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pt" type="tns:PickupType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="PickupType">
+        <s:restriction base="s:string">
+          <s:enumeration value="DailyPickup" />
+          <s:enumeration value="CustomerCounter" />
+          <s:enumeration value="OneTimePickup" />
+          <s:enumeration value="OnCallAir" />
+          <s:enumeration value="SuggestedRetailRates" />
+          <s:enumeration value="LetterCounter" />
+          <s:enumeration value="AirServiceCenter" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetPickupTypeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetCustomerClassification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cc" type="tns:CClassification" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="CClassification">
+        <s:restriction base="s:string">
+          <s:enumeration value="Wholesale" />
+          <s:enumeration value="Occasional" />
+          <s:enumeration value="Retail" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetCustomerClassificationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RequestService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="code" type="tns:ServiceType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ServiceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Shop" />
+          <s:enumeration value="UPSNextDayAir" />
+          <s:enumeration value="UPSSecondDayAir" />
+          <s:enumeration value="UPSGround" />
+          <s:enumeration value="UPSWorldwideExpress" />
+          <s:enumeration value="UPSWorldwideExpedited" />
+          <s:enumeration value="UPSStandard" />
+          <s:enumeration value="UPSThreeDaySelect" />
+          <s:enumeration value="UPSNextDayAirSaver" />
+          <s:enumeration value="UPSNextDayAirEarlyAM" />
+          <s:enumeration value="UPSWorldwideExpressPlus" />
+          <s:enumeration value="UPSSecondDayAirAM" />
+          <s:enumeration value="UPSSaver" />
+          <s:enumeration value="UPSTodayStandard" />
+          <s:enumeration value="UPSTodayDedicatedCourrier" />
+          <s:enumeration value="UPSTodayIntercity" />
+          <s:enumeration value="UPSTodayExpress" />
+          <s:enumeration value="UPSTodayExpressSaver" />
+          <s:enumeration value="TradeDirectCrossBorder" />
+          <s:enumeration value="TradeDirectAir" />
+          <s:enumeration value="TradeDirectOcean" />
+          <s:enumeration value="UPSFreightLTL" />
+          <s:enumeration value="UPSFreightLTLGuaranteed" />
+          <s:enumeration value="UPSFreightLTLUrgent" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="RequestServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RequestServiceString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestServiceStringResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetAccessInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accesslicensenumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAccessInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FullFromAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provorstate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="phonenumber" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attention" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullFromAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FullToAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provorstate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="phonenumber" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attention" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullToAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShippingItems">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShippingItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingItemsResult" type="tns:ArrayOfPackageProperties" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPackageProperties">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PackageProperties" nillable="true" type="tns:PackageProperties" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackageProperties">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeightUnit" type="tns:WeightUnit" />
+          <s:element minOccurs="1" maxOccurs="1" name="DimensionUnit" type="tns:DimensionUnit" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="WeightUnit">
+        <s:restriction base="s:string">
+          <s:enumeration value="LBS" />
+          <s:enumeration value="KGS" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DimensionUnit">
+        <s:restriction base="s:string">
+          <s:enumeration value="Inches" />
+          <s:enumeration value="Centimeters" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetShippingItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingItemResult" type="tns:UPSPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UPSPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PackagingType" type="tns:PackagingType" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackageProperties" type="tns:PackageProperties" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdditionalHandling" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackagingType" />
+      <s:element name="GetShippingRates">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShippingRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingRatesResult" type="tns:ArrayOfUPSRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUPSRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UPSRate" nillable="true" type="tns:UPSRate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UPSRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Service" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Warning" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingWeight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingWeightUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransportationCost" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceOptionsCost" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCost" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="GauranteedDaysToDelivery" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScheduledDeliveryTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetShippingRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingRateResult" type="tns:UPSRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRateFromID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRateFromIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRateFromIDResult" type="tns:UPSRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemPackaged">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packagingtype" type="tns:PackagingMethod" />
+            <s:element minOccurs="1" maxOccurs="1" name="weightunit" type="tns:WeightUnit" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dimensionunit" type="tns:DimensionUnit" />
+            <s:element minOccurs="1" maxOccurs="1" name="length" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="PackagingMethod">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unknown" />
+          <s:enumeration value="UPSLetter" />
+          <s:enumeration value="CustomerSuppliedPackage" />
+          <s:enumeration value="Tube" />
+          <s:enumeration value="PAK" />
+          <s:enumeration value="UPSExpressBox" />
+          <s:enumeration value="UPSSmallExpressBox" />
+          <s:enumeration value="UPSMediumExpressBox" />
+          <s:enumeration value="UPSLargeExpressBox" />
+          <s:enumeration value="UPS25KGBox" />
+          <s:enumeration value="UPS10KGBox" />
+          <s:enumeration value="Pallet" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddShippingItemPackagedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddShippingItemPackagedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemPackageUnknown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="weightunit" type="tns:WeightUnit" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dimensionunit" type="tns:DimensionUnit" />
+            <s:element minOccurs="1" maxOccurs="1" name="length" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemPackageUnknownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddShippingItemPackageUnknownResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemQuantity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="packagingtype" type="tns:PackagingMethod" />
+            <s:element minOccurs="1" maxOccurs="1" name="weightunit" type="tns:WeightUnit" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="dimensionunit" type="tns:DimensionUnit" />
+            <s:element minOccurs="1" maxOccurs="1" name="length" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemQuantityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddShippingItemQuantityResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitRequest">
+        <s:complexType />
+      </s:element>
+      <s:element name="SubmitRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUPSRatesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUPSRatesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUPSRatesTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServiceTypeTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceTypeTable" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceTypeTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceTypeTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPickupTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPickupType" />
+  </wsdl:message>
+  <wsdl:message name="SetPickupTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPickupTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerClassificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCustomerClassification" />
+  </wsdl:message>
+  <wsdl:message name="SetCustomerClassificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCustomerClassificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestService" />
+  </wsdl:message>
+  <wsdl:message name="RequestServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestServiceStringSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestServiceString" />
+  </wsdl:message>
+  <wsdl:message name="RequestServiceStringSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestServiceStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAccessInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAccessInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetAccessInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAccessInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FullFromAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:FullFromAddress" />
+  </wsdl:message>
+  <wsdl:message name="FullFromAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:FullFromAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="FullToAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:FullToAddress" />
+  </wsdl:message>
+  <wsdl:message name="FullToAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:FullToAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingItems" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingItem" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingRates" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingRate" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRateFromIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRateFromID" />
+  </wsdl:message>
+  <wsdl:message name="GetRateFromIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRateFromIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemPackagedSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShippingItemPackaged" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemPackagedSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShippingItemPackagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemPackageUnknownSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShippingItemPackageUnknown" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemPackageUnknownSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShippingItemPackageUnknownResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemQuantitySoapIn">
+    <wsdl:part name="parameters" element="tns:AddShippingItemQuantity" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemQuantitySoapOut">
+    <wsdl:part name="parameters" element="tns:AddShippingItemQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitRequest" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUPSRatesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUPSRatesTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUPSRatesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUPSRatesTableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UPSServiceSoap">
+    <wsdl:operation name="GetServiceTypeTable">
+      <wsdl:input message="tns:GetServiceTypeTableSoapIn" />
+      <wsdl:output message="tns:GetServiceTypeTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPickupType">
+      <wsdl:input message="tns:SetPickupTypeSoapIn" />
+      <wsdl:output message="tns:SetPickupTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerClassification">
+      <wsdl:input message="tns:SetCustomerClassificationSoapIn" />
+      <wsdl:output message="tns:SetCustomerClassificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestService">
+      <wsdl:input message="tns:RequestServiceSoapIn" />
+      <wsdl:output message="tns:RequestServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestService">
+      <wsdl:input name="RequestServiceString" message="tns:RequestServiceStringSoapIn" />
+      <wsdl:output name="RequestServiceString" message="tns:RequestServiceStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAccessInfo">
+      <wsdl:input message="tns:SetAccessInfoSoapIn" />
+      <wsdl:output message="tns:SetAccessInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <wsdl:input name="FullFromAddress" message="tns:FullFromAddressSoapIn" />
+      <wsdl:output name="FullFromAddress" message="tns:FullFromAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <wsdl:input name="FullToAddress" message="tns:FullToAddressSoapIn" />
+      <wsdl:output name="FullToAddress" message="tns:FullToAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItems">
+      <wsdl:input message="tns:GetShippingItemsSoapIn" />
+      <wsdl:output message="tns:GetShippingItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItem">
+      <wsdl:input message="tns:GetShippingItemSoapIn" />
+      <wsdl:output message="tns:GetShippingItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRates">
+      <wsdl:input message="tns:GetShippingRatesSoapIn" />
+      <wsdl:output message="tns:GetShippingRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRate">
+      <wsdl:input message="tns:GetShippingRateSoapIn" />
+      <wsdl:output message="tns:GetShippingRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRateFromID">
+      <wsdl:input message="tns:GetRateFromIDSoapIn" />
+      <wsdl:output message="tns:GetRateFromIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <wsdl:input name="AddShippingItemPackaged" message="tns:AddShippingItemPackagedSoapIn" />
+      <wsdl:output name="AddShippingItemPackaged" message="tns:AddShippingItemPackagedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <wsdl:input name="AddShippingItemPackageUnknown" message="tns:AddShippingItemPackageUnknownSoapIn" />
+      <wsdl:output name="AddShippingItemPackageUnknown" message="tns:AddShippingItemPackageUnknownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <wsdl:input name="AddShippingItemQuantity" message="tns:AddShippingItemQuantitySoapIn" />
+      <wsdl:output name="AddShippingItemQuantity" message="tns:AddShippingItemQuantitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <wsdl:input message="tns:SubmitRequestSoapIn" />
+      <wsdl:output message="tns:SubmitRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUPSRatesTable">
+      <wsdl:input message="tns:GetUPSRatesTableSoapIn" />
+      <wsdl:output message="tns:GetUPSRatesTableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UPSServiceSoap" type="tns:UPSServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceTypeTable">
+      <soap:operation soapAction="http://localhost:10981/Services/GetServiceTypeTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPickupType">
+      <soap:operation soapAction="http://localhost:10981/Services/SetPickupType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerClassification">
+      <soap:operation soapAction="http://localhost:10981/Services/SetCustomerClassification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestService">
+      <soap:operation soapAction="http://localhost:10981/Services/RequestService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestService">
+      <soap:operation soapAction="http://localhost:10981/Services/RequestServiceString" style="document" />
+      <wsdl:input name="RequestServiceString">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RequestServiceString">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAccessInfo">
+      <soap:operation soapAction="http://localhost:10981/Services/SetAccessInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <soap:operation soapAction="http://localhost:10981/Services/FullFromAddress" style="document" />
+      <wsdl:input name="FullFromAddress">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullFromAddress">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <soap:operation soapAction="http://localhost:10981/Services/FullToAddress" style="document" />
+      <wsdl:input name="FullToAddress">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullToAddress">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItems">
+      <soap:operation soapAction="http://localhost:10981/Services/GetShippingItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItem">
+      <soap:operation soapAction="http://localhost:10981/Services/GetShippingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRates">
+      <soap:operation soapAction="http://localhost:10981/Services/GetShippingRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRate">
+      <soap:operation soapAction="http://localhost:10981/Services/GetShippingRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateFromID">
+      <soap:operation soapAction="http://localhost:10981/Services/GetRateFromID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap:operation soapAction="http://localhost:10981/Services/AddShippingItemPackaged" style="document" />
+      <wsdl:input name="AddShippingItemPackaged">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemPackaged">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap:operation soapAction="http://localhost:10981/Services/AddShippingItemPackageUnknown" style="document" />
+      <wsdl:input name="AddShippingItemPackageUnknown">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemPackageUnknown">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap:operation soapAction="http://localhost:10981/Services/AddShippingItemQuantity" style="document" />
+      <wsdl:input name="AddShippingItemQuantity">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemQuantity">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <soap:operation soapAction="http://localhost:10981/Services/SubmitRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPSRatesTable">
+      <soap:operation soapAction="http://localhost:10981/Services/GetUPSRatesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UPSServiceSoap12" type="tns:UPSServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceTypeTable">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetServiceTypeTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPickupType">
+      <soap12:operation soapAction="http://localhost:10981/Services/SetPickupType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerClassification">
+      <soap12:operation soapAction="http://localhost:10981/Services/SetCustomerClassification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestService">
+      <soap12:operation soapAction="http://localhost:10981/Services/RequestService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestService">
+      <soap12:operation soapAction="http://localhost:10981/Services/RequestServiceString" style="document" />
+      <wsdl:input name="RequestServiceString">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RequestServiceString">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAccessInfo">
+      <soap12:operation soapAction="http://localhost:10981/Services/SetAccessInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <soap12:operation soapAction="http://localhost:10981/Services/FullFromAddress" style="document" />
+      <wsdl:input name="FullFromAddress">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullFromAddress">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <soap12:operation soapAction="http://localhost:10981/Services/FullToAddress" style="document" />
+      <wsdl:input name="FullToAddress">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullToAddress">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItems">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetShippingItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItem">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetShippingItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRates">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetShippingRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRate">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetShippingRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateFromID">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetRateFromID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap12:operation soapAction="http://localhost:10981/Services/AddShippingItemPackaged" style="document" />
+      <wsdl:input name="AddShippingItemPackaged">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemPackaged">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap12:operation soapAction="http://localhost:10981/Services/AddShippingItemPackageUnknown" style="document" />
+      <wsdl:input name="AddShippingItemPackageUnknown">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemPackageUnknown">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap12:operation soapAction="http://localhost:10981/Services/AddShippingItemQuantity" style="document" />
+      <wsdl:input name="AddShippingItemQuantity">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemQuantity">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <soap12:operation soapAction="http://localhost:10981/Services/SubmitRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUPSRatesTable">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetUPSRatesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UPSService">
+    <wsdl:port name="UPSServiceSoap" binding="tns:UPSServiceSoap">
+      <soap:address location="http://localhost:10981/Services/UPSService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UPSServiceSoap12" binding="tns:UPSServiceSoap12">
+      <soap12:address location="http://localhost:10981/Services/UPSService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

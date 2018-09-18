@@ -1,0 +1,351 @@
+﻿h1 br {
+    display: none;
+}
+
+/* Form Elements */
+fieldset
+{
+    width: auto;
+}
+    fieldset .form-text-box
+    {
+        width: 95%;
+    }
+    fieldset .form-text-area
+    {
+        width: 95%;
+    }
+label
+{
+    margin-top: 10px;
+}
+.form-text-box
+{
+
+}
+.form-text-area
+{
+
+}
+.form-select-box
+{
+
+}
+.form-check-box
+{
+
+}
+.form-radio-button
+{
+}
+.form-submit-button, .form-button
+{
+    width: auto;
+}
+.form-validate-error
+{
+
+}
+
+#contact-form fieldset {
+    width: 80%;
+}
+/* Form Elements */
+
+#unstickyheader, #stickyalias, .bg {
+    display: none;
+    max-height: 0px;
+    height: 0px;
+}
+.header-main {
+    position: relative !important;
+}
+header {
+    height: auto;
+    background-position: center top;
+    position: relative !important;
+    text-align: center;
+    background-color: #222;
+}
+header div {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border: none;
+    position: relative;
+}
+header div img
+{
+    margin: auto;
+    float: none;
+}
+header div nav {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: #222;
+}
+header div nav a
+{
+    display: block;
+    padding-bottom: 15px;
+    height: auto;
+	width: 90%;
+    background-image: none;
+    border: 1px solid #1D1D1D;
+    background-color: #333;
+    margin: 3px auto;
+    clear: left;
+    float: none;
+    border-radius: 2px;
+    text-shadow: 0px -1px 0px #111;
+}
+header div nav a:after {
+    content: "\f054";
+    font-family: FontAwesome;
+    font-size: 14px;
+    float: right;
+    margin-right: 20px;
+}
+header div nav a br {
+    float: left;
+    display: none;
+}
+header div nav a:hover {
+    background-image: none;
+    background-color: #3D3D3D;
+    text-shadow: none;
+}
+.bullhorn { display: none; }
+.live-chat {
+    display: none;
+}
+.social-media {
+    position: relative;
+    float: none;
+    clear: left;
+    width: auto;
+    right: 0px;
+    margin-top: 10px;
+    margin: auto;
+    display: inline-block;
+}
+.social-media a {
+    float: left;
+    clear: none;
+    margin: 10px;
+}
+.search-control
+{
+    width: 90%;
+    float: none;
+    margin: 0 auto 0 auto;
+}
+.search-box, .search-box-watermark
+{
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    padding-left: 0px;
+    
+}
+.search-button
+{
+    margin-left: -20px;
+}
+
+.content-section { width: 90%; padding: 1em; }
+.content-section p { width: 100%; max-width: initial; }
+.secondary-content-section section
+{
+    width: 100%;
+}
+
+.portfolio-main-image
+{
+    width: 95%;
+    float: none;
+    margin-top: -80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.portfolio-links {
+    display: none;
+}
+
+.generic-call-to-action {
+    width: 90%;
+    padding: 1em;
+}
+.generic-call-to-action p
+    {
+        width: 100%;
+    }
+    .generic-call-to-action a:before
+    {
+        display: block;
+        float: none;
+        margin-top: 0px;
+        margin-right: 0px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border: 1px dashed #F9F3D7;
+    }
+    .generic-call-to-action a
+    {
+        float: none;
+        margin-top: 0;
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-radius: 10px;
+        padding: 10px 0;
+        /*border: 8px solid #3FA9F5;*/
+    }
+
+.footer-links
+{
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background-image: none;
+    background-color: #FFD52D;
+    margin: -8px;
+    margin-top: -20px;
+    outline: 8px solid #FFD52D;
+    border-top: 1px dashed #F9F3D7;
+    border-bottom: 1px dashed #F9F3D7;
+}
+    .footer-links img
+    {
+        display: none;
+    }
+    .footer-links nav, .footer-links div
+    {
+        padding: 1em;
+        float: left;
+        width: auto;
+        display: block;
+        color: #555555;
+        margin-top: 25px;
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+    .footer-links div
+    {
+        float: none;
+        width: 90%;
+        clear: both;
+        padding-top: 20px;
+    }
+
+.copyright
+{
+    width: 90%;
+    padding: 1em;
+    margin: auto;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+    .copyright hr
+    {
+        display: none;
+    }
+    .copyright p
+    {
+        display: block;
+        float: none;
+        width: auto;
+        margin: 0px;
+    }
+
+.tab-container {
+    width: 100%;
+}
+.tabs {
+    width: 100%;
+}
+
+#switcher-panel
+{
+    height: auto;
+    width: 100%;
+}
+#switcher-panel span
+{
+    font-size: 48px;
+    float: left;
+    margin: 10px 30px 10px 30px;
+    color: #C1272D;
+}
+.process-section
+{
+    width: 95%;
+    height: auto;
+}
+.process-section div
+{
+    height: auto;
+}
+.process-section div ul {
+    width: 100%;
+    height: 40px;
+    padding: 0.5em;
+}
+.process-section div ul li
+{
+    margin: 5px 5px;
+    width: 50px;
+}
+.process-section div ul li.selected
+{
+    font-size: 18px;
+    margin-top: 0px;
+}
+.process-section div p, #switcher-panel p
+{
+    width: auto;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 1em;
+    padding-top: 0;
+}
+
+.blue-circle-call-to-action
+{
+    background-color: #0094ff;
+    background-image: none;
+    width: 100%;
+    height: auto;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+/*-- JShowOff Styles --*/
+.rotator-section img {
+    display: none;
+}
+.rotator-section p, .rotator-section h1 {
+    width: auto;
+}
+#JShowOffRotator
+{
+    display: none;
+}
+.jshowoff
+{
+    width: 100%;
+    padding: 1em;
+}
+    .jshowoff ul, .jshowoff li
+    {
+        width: 100%;
+    }
+/*-- End JShowOff Styles --*/

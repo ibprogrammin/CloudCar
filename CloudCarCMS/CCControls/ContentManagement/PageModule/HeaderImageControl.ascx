@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="HeaderImageControl.ascx.vb" Inherits="CloudCar.CCControls.ContentManagement.PageModule.HeaderImageControl" %>
+<img runat="server" id="HeaderImage" src="" alt="" visible="false" />

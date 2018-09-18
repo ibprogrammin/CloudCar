@@ -1,0 +1,3143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E19E18C8-2D40-4B9E-A8D1-4902512C1E94}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CloudCar</RootNamespace>
+    <AssemblyName>CloudCarFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>CloudCarFramework.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>CloudCarFramework.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.7.0725\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Braintree-2.26.1">
+      <HintPath>..\packages\Braintree.2.26.1\lib\Braintree-2.26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.1.13153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.Client">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth2.Client.4.3.1.13153\lib\net40-full\DotNetOpenAuth.OAuth2.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="eSELECTplus_dotNet_API, Version=2.5.5.0, Culture=neutral, PublicKeyToken=8cb9cd598f87e276, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\eSELECTplus_dotNet_API.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.5.0-beta\lib\net40\Google.Apis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Analytics.v3">
+      <HintPath>..\packages\Google.Apis.Analytics.v3.1.5.0.64-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Analytics.v3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Authentication.OAuth2">
+      <HintPath>..\packages\Google.Apis.Authentication.OAuth2.1.2.4696.27634\lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.2\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System, Version=4.0.0.0">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\CloudCarDb.sql" />
+    <Content Include="App_Data\CloudCarDbScript.sql" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\ScriptReferenceProfiler.dll" />
+    <Content Include="CCAdmin\ContentManagement\CallToActionModule\CallToAction.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CareerModule\Careers.aspx" />
+    <Content Include="CCAdmin\ContentManagement\FormModule\CustomIntakeForms.aspx" />
+    <Content Include="CCAdmin\ContentManagement\NewsModule\News.aspx" />
+    <Content Include="CCAdmin\Default.aspx" />
+    <Content Include="CCAdmin\EditorControls\CKEditorImageBrowser.aspx" />
+    <Content Include="CCBlogging\Blog.aspx" />
+    <Content Include="CCBlogging\BlogEntries.aspx" />
+    <Content Include="CCCommerce\Colours.aspx" />
+    <Content Include="CCCommerce\WishList.aspx" />
+    <Content Include="CCControls\Admin\AlertMessageControl.ascx" />
+    <Content Include="CCControls\Admin\CKEditorControl.ascx" />
+    <Content Include="CCControls\Admin\TipMessageControl.ascx" />
+    <Content Include="CCControls\Admin\UserAccountControl.ascx" />
+    <Content Include="CCControls\Commerce\BrandControl.ascx" />
+    <Content Include="CCControls\Commerce\ColorControl.ascx" />
+    <Content Include="CCControls\Commerce\LatestControl.ascx" />
+    <Content Include="CCControls\Commerce\ProductControls\RecomendedProductControl.ascx" />
+    <Content Include="CCControls\Commerce\WishList.ascx" />
+    <Content Include="CCContentManagement\CareerModule\CareerDetails.aspx" />
+    <Content Include="CCContentManagement\CareerModule\Careers.aspx" />
+    <Content Include="CCContentManagement\ClientForms\GrantsForm.aspx" />
+    <Content Include="CCContentManagement\EventModule\EventDetails.aspx" />
+    <Content Include="CCContentManagement\FormModule\FormDisplay.aspx" />
+    <Content Include="CCContentManagement\NewsModule\NewsDetails.aspx" />
+    <Content Include="CCContentManagement\NewsModule\News.aspx" />
+    <Content Include="CCControls\Commerce\CategoriesControl.ascx" />
+    <Content Include="CCControls\Commerce\ShippingControls\ShippingRatesControl.ascx" />
+    <Content Include="CCControls\Commerce\ShoppingProgressControl.ascx" />
+    <Content Include="CCControls\Commerce\TopSellersControl.ascx" />
+    <Content Include="CCControls\ContentManagement\CloudCarScriptManagementControl.ascx" />
+    <Content Include="CCControls\ContentManagement\EventsModule\EventsDetailsControl.ascx" />
+    <Content Include="CCControls\ContentManagement\NewsModule\NewsDetailsControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\BreadCrumbControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\CallToActionControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\ChildPageMenuControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\ContentControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\CameraRotatorControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\HeaderControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\HeaderImageControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\ScriptControl.ascx" />
+    <Content Include="CCControls\ContentManagement\CalendarModule\MyScheduleControl.ascx" />
+    <Content Include="CCControls\ContentManagement\CalendarModule\ScheduleCalendarControl.ascx" />
+    <Content Include="CCControls\ContentManagement\CareerModule\CareerListControl.ascx" />
+    <Content Include="CCControls\ContentManagement\EventsModule\EventsCalendar.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\JShowOffRotatorControl.ascx" />
+    <Content Include="CCTemplates\Admin\ckeditor\adapters\jquery.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\build-config.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\ckeditor.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\config.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\contents.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\lang\en.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\icons.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\imagebrowser\browser\browser.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\imagebrowser\browser\browser.html" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\imagebrowser\browser\browser.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\imagebrowser\browser\jquery-1.9.1.min.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\imagebrowser\LICENSE.txt" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\.gitignore" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\ace.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\keybinding-emacs.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-c9search.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-clojure.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-coffee.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-coldfusion.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-csharp.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-css.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-c_cpp.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-diff.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-glsl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-golang.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-groovy.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-haxe.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-html.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-jade.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-java.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-javascript.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-json.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-jsp.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-jsx.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-latex.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-less.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-liquid.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-lua.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-luapage.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-markdown.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-ocaml.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-perl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-pgsql.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-php.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-powershell.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-python.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-ruby.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-scad.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-scala.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-scss.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-sh.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-sql.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-svg.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-tcl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-text.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-textile.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-xml.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-xquery.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\mode-yaml.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-ambiance.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-chrome.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-clouds.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-clouds_midnight.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-cobalt.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-crimson_editor.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-dawn.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-dreamweaver.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-eclipse.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-github.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-idle_fingers.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-kr_theme.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-merbivore.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-merbivore_soft.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-monokai.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-mono_industrial.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-pastel_on_dark.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-solarized_dark.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-solarized_light.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-textmate.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-tomorrow.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-tomorrow_night.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-tomorrow_night_blue.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-tomorrow_night_bright.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-tomorrow_night_eighties.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-twilight.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-vibrant_ink.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\ace\theme-xcode.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\pbckcode.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\dialogs\style.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\dialog.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\editor.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\icons.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\close.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="CCTemplates\Admin\ckeditor\styles.js" />
+    <Content Include="CCTemplates\Admin\Fonts\fontawesome-webfont.svg" />
+    <Content Include="CCTemplates\Admin\Images\buttons\add.button.png" />
+    <Content Include="CCTemplates\Admin\Images\buttons\blue.return.png" />
+    <Content Include="CCTemplates\Admin\Images\buttons\browse.button.png" />
+    <Content Include="CCTemplates\Admin\Images\buttons\ed_image_a.gif" />
+    <Content Include="CCTemplates\Admin\Images\buttons\ed_image_n.gif" />
+    <Content Include="CCTemplates\Admin\Images\buttons\ed_insertIcon_a.gif" />
+    <Content Include="CCTemplates\Admin\Images\buttons\ed_insertIcon_n.gif" />
+    <Content Include="CCTemplates\Admin\Images\buttons\green.add.png" />
+    <Content Include="CCTemplates\Admin\Images\buttons\page.icon.jpg" />
+    <Content Include="CCTemplates\Admin\Images\buttons\red.subtract.png" />
+    <Content Include="CCTemplates\Admin\Images\buttons\search.button.jpg" />
+    <Content Include="CCTemplates\Admin\Images\buttons\subtract.button.png" />
+    <Content Include="CCTemplates\Admin\Images\cc.favicon.ico" />
+    <Content Include="CCTemplates\Admin\Images\cloud.car.logo.png" />
+    <Content Include="CCTemplates\Admin\Images\dialog.box.bottom.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\admin.icons.jpg" />
+    <Content Include="CCTemplates\Admin\Images\icons\american.express.icon.jpg" />
+    <Content Include="CCTemplates\Admin\Images\icons\angel.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\angry.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\beer.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\blog.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\bomb.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\brand.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\category.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.account.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.account.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.blog.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.blog.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.brand.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.brand.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.category.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.category.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.color.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.color.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.country.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.country.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.csv.icon.hover.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.csv.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.dashboard.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.event.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.event.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.faq.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.faq.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.favicon2.ico" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.favicon3.ico" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.file.uploads.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.file.uploads.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.gallery.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.gallery.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.help.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.help.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.images.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.images.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.inventory.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.inventory.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.lead.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.lead.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.link.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.link.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.logo.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.logout.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.logout.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.maintenance.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.maintenance.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.navigation.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.navigation.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.news.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.news.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.next.button.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.order.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.order.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.pages.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.pages.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.product.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.product.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.promo.code.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.promo.code.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.region.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.region.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.report.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.report.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.reset.button.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.review.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.review.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.settings.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.settings.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.shipping.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.shipping.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.size.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.size.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.subscribe.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.subscribe.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.testimonial.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.testimonial.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.video.icon.dark.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\cc.video.icon.light.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\colour.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\country.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\dashboard.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\disappointed.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\discover.icon.jpg" />
+    <Content Include="CCTemplates\Admin\Images\icons\dropdown.icon.hover.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\dropdown.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\Embarrassed.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\faq.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\flower.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\grin.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\grumpy.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\help.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\hot.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\icons-layered.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\icons-punched.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\image.rotator.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\images.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\inventory.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\kiss.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\kiss2.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\kissing.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\laugh.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\leads.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\links.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\love.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\mastercard.icon.jpg" />
+    <Content Include="CCTemplates\Admin\Images\icons\music.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\news.events.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\newsletter.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\order.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\page.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\pdf_icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\product.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\promo.code.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\prov.state.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\report.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\review.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\sad.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\settings.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\shipping.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\shutup.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\sizes.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\sleepy.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\smile.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\stop.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\Surprised.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\tear.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\testimonial.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\thinking.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\thumb_up.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\tired.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\tongue.gif" />
+    <Content Include="CCTemplates\Admin\Images\icons\upload.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\user.icon.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\visa.icon.jpg" />
+    <Content Include="CCTemplates\Admin\Images\icons\wink.gif" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-icons_222222_256x240.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-icons_228ef1_256x240.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-icons_ef8c08_256x240.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-icons_ffd27a_256x240.png" />
+    <Content Include="CCTemplates\Admin\Images\jquery-ui\ui-icons_ffffff_256x240.png" />
+    <Content Include="CCTemplates\Admin\Images\No-photo-Available.jpg" />
+    <Content Include="CCTemplates\Admin\Images\sm.logo.png" />
+    <Content Include="CCTemplates\Admin\Scripts\cc.admin.main.js" />
+    <Content Include="CCTemplates\Admin\Scripts\flot\excanvas.min.js" />
+    <Content Include="CCTemplates\Admin\Scripts\flot\flot.curved.lines.js" />
+    <Content Include="CCTemplates\Admin\Scripts\flot\jquery.flot.min.js" />
+    <Content Include="CCTemplates\Admin\Scripts\flot\jquery.flot.tooltip.js" />
+    <Content Include="CCTemplates\Admin\Scripts\jquery-ui\jquery-ui-1.8.13.custom.min.js" />
+    <Content Include="CCTemplates\Admin\Styles\admin.960.css" />
+    <Content Include="CCTemplates\Admin\Styles\admin.css3.css" />
+    <Content Include="CCTemplates\Admin\Styles\admin.css" />
+    <Content Include="CCTemplates\Admin\Styles\admin.mobile.css" />
+    <Content Include="CCTemplates\Admin\Styles\admin.720.css" />
+    <Content Include="CCTemplates\Admin\Styles\font-awesome.css" />
+    <Content Include="CCTemplates\Admin\Styles\ie.admin.styles.css" />
+    <Content Include="CCTemplates\Admin\Styles\jquery-ui-1.8.13.custom.css" />
+    <Content Include="CCTemplates\Default\Images\373037_80655071208_413772484_q.jpg" />
+    <Content Include="CCTemplates\Default\Images\account-resp.png" />
+    <Content Include="CCTemplates\Default\Images\add-cart.png" />
+    <Content Include="CCTemplates\Default\Images\arrow-inactive.png" />
+    <Content Include="CCTemplates\Default\Images\arrow-left.png" />
+    <Content Include="CCTemplates\Default\Images\arrow-right.png" />
+    <Content Include="CCTemplates\Default\Images\author.png" />
+    <Content Include="CCTemplates\Default\Images\button-next-disabled.png" />
+    <Content Include="CCTemplates\Default\Images\button-previous-disabled.png" />
+    <Content Include="CCTemplates\Default\Images\button-search.png" />
+    <Content Include="CCTemplates\Default\Images\camera-loader.gif" />
+    <Content Include="CCTemplates\Default\Images\camera_skins.png" />
+    <Content Include="CCTemplates\Default\Images\cart-bg.png" />
+    <Content Include="CCTemplates\Default\Images\cc.logo.jpg" />
+    <Content Include="CCTemplates\Default\Images\close.png" />
+    <Content Include="CCTemplates\Default\Images\crescent-logo.png" />
+    <Content Include="CCTemplates\Default\Images\email.png" />
+    <Content Include="CCTemplates\Default\Images\favicon.png" />
+    <Content Include="CCTemplates\Default\Images\grid-active.png" />
+    <Content Include="CCTemplates\Default\Images\grid.png" />
+    <Content Include="CCTemplates\Default\Images\image.sprite.png" />
+    <Content Include="CCTemplates\Default\Images\info-icon.png" />
+    <Content Include="CCTemplates\Default\Images\jQueryLightBox\lightbox-blank.gif" />
+    <Content Include="CCTemplates\Default\Images\jQueryLightBox\lightbox-btn-close.gif" />
+    <Content Include="CCTemplates\Default\Images\jQueryLightBox\lightbox-btn-next.gif" />
+    <Content Include="CCTemplates\Default\Images\jQueryLightBox\lightbox-btn-prev.gif" />
+    <Content Include="CCTemplates\Default\Images\jQueryLightBox\lightbox-ico-loading.gif" />
+    <Content Include="CCTemplates\Default\Images\links-resp.png" />
+    <Content Include="CCTemplates\Default\Images\list-active.png" />
+    <Content Include="CCTemplates\Default\Images\list.png" />
+    <Content Include="CCTemplates\Default\Images\location.png" />
+    <Content Include="CCTemplates\Default\Images\nav-icon.png" />
+    <Content Include="CCTemplates\Default\Images\newsletter %281%29.png" />
+    <Content Include="CCTemplates\Default\Images\newsletter-subscribe %281%29.png" />
+    <Content Include="CCTemplates\Default\Images\newsletter-subscribe.png" />
+    <Content Include="CCTemplates\Default\Images\newsletter.png" />
+    <Content Include="CCTemplates\Default\Images\NivoSlider\arrows.png" />
+    <Content Include="CCTemplates\Default\Images\NivoSlider\bullets.png" />
+    <Content Include="CCTemplates\Default\Images\NivoSlider\default.css" />
+    <Content Include="CCTemplates\Default\Images\NivoSlider\loading.gif" />
+    <Content Include="CCTemplates\Default\Images\page.background.jpg" />
+    <Content Include="CCTemplates\Default\Images\payments %281%29.png" />
+    <Content Include="CCTemplates\Default\Images\payments.png" />
+    <Content Include="CCTemplates\Default\Images\phone.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\brant-windows-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\BrantWindow.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\BrantWindowBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\BrantWindowMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\BrantWindowWebsite.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\cyberlis-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Cyberlis.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\CyberlisBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\CyberlisMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\green-smoothie-bar-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\GreenSmoothieBar.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\GreenSmoothieBarBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\GreenSmoothieBarMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\hamilton-limousine-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\HamiltonLimo.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\HamiltonLimoBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\HamiltonLimoMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\loewen-group-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\LoewenGroup.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\LoewenGroupBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\LoewenGroupMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\LoewenGroupWebsite.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\mba-games-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\MBAGames.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\MBAGamesBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\MBAGamesMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\mex-i-can-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Mex-I-Can.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Mex-I-CanBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Mex-I-CanMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\perfect-game-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\PerfectGame.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\PerfectGameMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\PerfectGameWebsite.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Rembrand.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\RembrandBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\RembrandMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\sampson-transmission-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\SampsonTransMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\SampsonTransWebsite.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\tech-con-portfolio-main-01.png" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Tech-Con.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Tech-ConMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\Tech-ConWebsite.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\TimLucas.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\TimLucasBranding.jpg" />
+    <Content Include="CCTemplates\Default\Images\Portfolio\TimLucasMain.jpg" />
+    <Content Include="CCTemplates\Default\Images\remove-small.png" />
+    <Content Include="CCTemplates\Default\Images\Required\AcceptedCreditCards.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\ajax-loader.gif" />
+    <Content Include="CCTemplates\Default\Images\Required\american.express.icon.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\arrows.png" />
+    <Content Include="CCTemplates\Default\Images\Required\bullets.png" />
+    <Content Include="CCTemplates\Default\Images\Required\check.mark.png" />
+    <Content Include="CCTemplates\Default\Images\Required\dialog.box.bottom.gif" />
+    <Content Include="CCTemplates\Default\Images\Required\discover.icon.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\garbage.can.hover.png" />
+    <Content Include="CCTemplates\Default\Images\Required\garbage.can.png" />
+    <Content Include="CCTemplates\Default\Images\Required\garbage.can.small.hover.png" />
+    <Content Include="CCTemplates\Default\Images\Required\garbage.can.small.png" />
+    <Content Include="CCTemplates\Default\Images\Required\help.button_03.gif" />
+    <Content Include="CCTemplates\Default\Images\Required\left.arrow.png" />
+    <Content Include="CCTemplates\Default\Images\Required\loading.gif" />
+    <Content Include="CCTemplates\Default\Images\Required\mastercard.icon.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\No-photo-Available.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\pdf_icon.png" />
+    <Content Include="CCTemplates\Default\Images\Required\portrait.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.browse.green.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.browse.grey.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.browse.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.browse.red.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.checkout.green.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.checkout.grey.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.checkout.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.checkout.red.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.shopping.cart.green.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.shopping.cart.grey.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.shopping.cart.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.shopping.cart.red.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.thank.you.green.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.thank.you.grey.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.thank.you.png" />
+    <Content Include="CCTemplates\Default\Images\Required\progress.bar.thank.you.red.png" />
+    <Content Include="CCTemplates\Default\Images\Required\right.arrow.png" />
+    <Content Include="CCTemplates\Admin\Images\icons\round.help.icon.png" />
+    <Content Include="CCTemplates\Default\Images\Required\rss.icon.png" />
+    <Content Include="CCTemplates\Default\Images\Required\shipping.button.hover.png" />
+    <Content Include="CCTemplates\Default\Images\Required\shipping.button.hover.purple.png" />
+    <Content Include="CCTemplates\Default\Images\Required\shipping.button.png" />
+    <Content Include="CCTemplates\Default\Images\Required\shipping.button.purple.png" />
+    <Content Include="CCTemplates\Default\Images\Required\spacer.gif" />
+    <Content Include="CCTemplates\Default\Images\Required\star_empty.png" />
+    <Content Include="CCTemplates\Default\Images\Required\star_filled.png" />
+    <Content Include="CCTemplates\Default\Images\Required\star_waiting.png" />
+    <Content Include="CCTemplates\Default\Images\Required\top.seller.2.icon.png" />
+    <Content Include="CCTemplates\Default\Images\Required\top.seller.icon.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\top.seller.icon.png" />
+    <Content Include="CCTemplates\Default\Images\Required\VbyV_en_lm.jpg" />
+    <Content Include="CCTemplates\Default\Images\Required\verisign-logo.gif" />
+    <Content Include="CCTemplates\Default\Images\Required\visa.icon.jpg" />
+    <Content Include="CCTemplates\Default\Images\rotator.item.01.jpg" />
+    <Content Include="CCTemplates\Default\Images\shopping-cart-icon.png" />
+    <Content Include="CCTemplates\Default\Images\skype.png" />
+    <Content Include="CCTemplates\Default\Images\social.png" />
+    <Content Include="CCTemplates\Default\Images\stars-5.png" />
+    <Content Include="CCTemplates\Default\Images\subtlenet2.png" />
+    <Content Include="CCTemplates\Default\Images\success.png" />
+    <Content Include="CCTemplates\Default\Images\warning.png" />
+    <Content Include="CCTemplates\Default\Scripts\all.js" />
+    <Content Include="CCTemplates\Default\Scripts\camera.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\cloud-zoom.1.0.2.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\crescent-common.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery-ui.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.carouFredSel-5.6.4-packed.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.colorbox.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.cookie.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.easing.1.3.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.jcarousel.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.mobile.customized.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\jquery.poshytip.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\modernizr-2.6.1.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\respond.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\scrolltopcontrol.js" />
+    <Content Include="CCTemplates\Default\Scripts\tabs.js" />
+    <Content Include="CCTemplates\Default\Scripts\WgFL-tIhwUh.js" />
+    <Content Include="CCTemplates\Default\Styles\boxed-layout.css" />
+    <Content Include="CCTemplates\Default\Styles\carousel.css" />
+    <Content Include="CCTemplates\Default\Styles\cloud-zoom.css" />
+    <Content Include="CCTemplates\Default\Styles\colorbox.css" />
+    <Content Include="CCTemplates\Default\Styles\font-awesome.min.css" />
+    <Content Include="CCTemplates\Default\Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="CCTemplates\Default\Styles\main-mobile.css" />
+    <Content Include="CCTemplates\Default\Styles\main-720.css" />
+    <Content Include="CCTemplates\Default\Styles\main-960.css" />
+    <Content Include="CCTemplates\Default\Styles\main-1200.css" />
+    <Content Include="CCTemplates\Default\Styles\main-1600.css" />
+    <Content Include="CCTemplates\Default\Styles\main.css" />
+    <Content Include="CCTemplates\Default\Styles\normalize.css" />
+    <Content Include="CCTemplates\Default\Styles\responsive.css" />
+    <Content Include="CCTemplates\Default\Styles\stcameraslideshow.css" />
+    <Content Include="CCTemplates\Default\Styles\stylesheet.css" />
+    <Content Include="CCTemplates\Default\Styles\tip-twitter.css" />
+    <Content Include="CCTemplates\Shared\Scripts\adapt.js" />
+    <Content Include="CCTemplates\Default\Scripts\AdGallery\adgallery.js" />
+    <Content Include="CCTemplates\Default\Scripts\EasyTabs\jquery.easing.1.3.js" />
+    <Content Include="CCTemplates\Default\Scripts\EasyTabs\jquery.easytabs.js" />
+    <Content Include="CCTemplates\Default\Scripts\EasyTabs\jquery.easytabs.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\EasyTabs\jquery.hashchange.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\Galleriffic\jquery.galleriffic.js" />
+    <Content Include="CCTemplates\Default\Scripts\google.functions.js" />
+    <Content Include="CCTemplates\Default\Scripts\jLensView\jlensview.js" />
+    <Content Include="CCTemplates\Default\Scripts\jMultiZoom\multizoom.js" />
+    <Content Include="CCTemplates\Default\Scripts\jQueryLightBox\jquery.js" />
+    <Content Include="CCTemplates\Default\Scripts\jQueryLightBox\jquery.lightbox-0.5.js" />
+    <Content Include="CCTemplates\Default\Scripts\jQueryLightBox\jquery.lightbox-0.5.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\jQueryLightBox\jquery.lightbox-0.5.pack.js" />
+    <Content Include="CCTemplates\Default\Scripts\jShowOff\jquery.jshowoff.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\main.js" />
+    <Content Include="CCTemplates\Default\Scripts\NivoSlider\jquery.nivo.slider.pack.js" />
+    <Content Include="CCTemplates\Default\Scripts\qTip\jquery.qtip-1.0.0-rc3.min.js" />
+    <Content Include="CCTemplates\Default\Scripts\Tweetable\jquery.tweetable.js" />
+    <Content Include="CCTemplates\Default\Scripts\Tweetable\jquery.tweetable.min.js" />
+    <Content Include="CCTemplates\Default\Styles\jQueryLightBox\jquery.lightbox-0.5.css" />
+    <Content Include="CCTemplates\Default\Styles\jShowOff\jshowoff.styles.css" />
+    <Content Include="CCTemplates\Default\Styles\main.old.css" />
+    <Content Include="CCTemplates\Default\Styles\main.css3.css" />
+    <Content Include="CCTemplates\Default\Styles\main.ie.css" />
+    <Content Include="CCTemplates\Default\Styles\mobile.css" />
+    <Content Include="CCTemplates\Shared\Fonts\lbrite-webfont.svg" />
+    <Content Include="CCTemplates\Shared\Fonts\lbrited-webfont.svg" />
+    <Content Include="CCTemplates\Shared\Fonts\lbritedi-webfont.svg" />
+    <Content Include="CCTemplates\Shared\Fonts\lbritei-webfont.svg" />
+    <Content Include="CCTemplates\Shared\Scripts\EasyTabs\jquery.easing.1.3.js" />
+    <Content Include="CCTemplates\Shared\Scripts\EasyTabs\jquery.easytabs.js" />
+    <Content Include="CCTemplates\Shared\Scripts\EasyTabs\jquery.easytabs.min.js" />
+    <Content Include="CCTemplates\Shared\Scripts\EasyTabs\jquery.hashchange.min.js" />
+    <Content Include="CCTemplates\Shared\Scripts\jquery.easing.1.3.js" />
+    <Content Include="CCTemplates\Shared\Scripts\ooCharts\oocharts.js" />
+    <Content Include="CCTemplates\Shared\Scripts\ooCharts\oocharts.min.js" />
+    <Content Include="ClientHeaders.aspx" />
+    <Content Include="opensearch.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Project Documents\SM-BeanStreamAccessInfo.txt" />
+    <Content Include="Properties\AssemblyInfo.log4net.cs" />
+    <Content Include="Robots.txt" />
+    <Content Include="CCCommerce\Categories.aspx" />
+    <Content Include="CCCommerce\Checkout.aspx" />
+    <Content Include="CCCommerce\CommingSoon.aspx" />
+    <Content Include="CCCommerce\Email\NewOrderInvoice.aspx" />
+    <Content Include="CCCommerce\Email\TestEmail.aspx" />
+    <Content Include="CCCommerce\ClientPages\Membership\Contract.aspx" />
+    <Content Include="CCCommerce\ClientPages\Membership\MemberApp.aspx" />
+    <Content Include="CCCommerce\ClientPages\Membership\Waiver.aspx" />
+    <Content Include="CCCommerce\ProductImages.aspx" />
+    <Content Include="CCCommerce\Products.aspx" />
+    <Content Include="CCCommerce\ShoppingCart.aspx" />
+    <Content Include="CCCommerce\ThankYou.aspx" />
+    <Content Include="CCConfig\pages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CCTemplates\Default\Styles\css" />
+    <None Include="My Project\PublishProfiles\Serious Monkey 2013.pubxml" />
+    <Content Include="Web References\OptimalPayments.NetBanx\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Web References\OptimalPayments.NetBanx\v1.wsdl" />
+    <Content Include="Web References\OptimalPayments.NetBanx\CCTxnResponseV11.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\CommerceResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommerceResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Blogging\Authors.aspx.designer.vb">
+      <DependentUpon>Authors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Blogging\Authors.aspx.vb">
+      <DependentUpon>Authors.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Blogging\Blogs.aspx.designer.vb">
+      <DependentUpon>Blogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Blogging\Blogs.aspx.vb">
+      <DependentUpon>Blogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Blogging\Comment.aspx.designer.vb">
+      <DependentUpon>Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Blogging\Comment.aspx.vb">
+      <DependentUpon>Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Bookings.aspx.designer.vb">
+      <DependentUpon>Bookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Bookings.aspx.vb">
+      <DependentUpon>Bookings.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\CalendarResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\InstructorDetails.aspx.designer.vb">
+      <DependentUpon>InstructorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\InstructorDetails.aspx.vb">
+      <DependentUpon>InstructorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Instructors.aspx.designer.vb">
+      <DependentUpon>Instructors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Instructors.aspx.vb">
+      <DependentUpon>Instructors.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Memberships.aspx.designer.vb">
+      <DependentUpon>Memberships.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Memberships.aspx.vb">
+      <DependentUpon>Memberships.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\ProgramDetails.aspx.designer.vb">
+      <DependentUpon>ProgramDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\ProgramDetails.aspx.vb">
+      <DependentUpon>ProgramDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Programs.aspx.designer.vb">
+      <DependentUpon>Programs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Programs.aspx.vb">
+      <DependentUpon>Programs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\ScheduleDetails.aspx.designer.vb">
+      <DependentUpon>ScheduleDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\ScheduleDetails.aspx.vb">
+      <DependentUpon>ScheduleDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Schedules.aspx.designer.vb">
+      <DependentUpon>Schedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\Schedules.aspx.vb">
+      <DependentUpon>Schedules.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\ScheduleSignups.aspx.designer.vb">
+      <DependentUpon>ScheduleSignups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\ScheduleSignups.aspx.vb">
+      <DependentUpon>ScheduleSignups.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CallToActionModule\CallToAction.aspx.designer.vb">
+      <DependentUpon>CallToAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CallToActionModule\CallToAction.aspx.vb">
+      <DependentUpon>CallToAction.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CareerModule\Careers.aspx.designer.vb">
+      <DependentUpon>Careers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CareerModule\Careers.aspx.vb">
+      <DependentUpon>Careers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\NewsModule\News.aspx.designer.vb">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\NewsModule\News.aspx.vb">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Pages.aspx.designer.vb">
+      <DependentUpon>Pages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Pages.aspx.vb">
+      <DependentUpon>Pages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\ImageGalleries.aspx.designer.vb">
+      <DependentUpon>ImageGalleries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\ImageGalleries.aspx.vb">
+      <DependentUpon>ImageGalleries.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\ImageGalleryItems.aspx.designer.vb">
+      <DependentUpon>ImageGalleryItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\ImageGalleryItems.aspx.vb">
+      <DependentUpon>ImageGalleryItems.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Images.aspx.designer.vb">
+      <DependentUpon>Images.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Images.aspx.vb">
+      <DependentUpon>Images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\MenuItems.aspx.designer.vb">
+      <DependentUpon>MenuItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\MenuItems.aspx.vb">
+      <DependentUpon>MenuItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Testimonials.aspx.designer.vb">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Testimonials.aspx.vb">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Rotator.aspx.designer.vb">
+      <DependentUpon>Rotator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Rotator.aspx.vb">
+      <DependentUpon>Rotator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Videos.aspx.designer.vb">
+      <DependentUpon>Videos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Videos.aspx.vb">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\FormModule\CustomIntakeForms.aspx.designer.vb">
+      <DependentUpon>CustomIntakeForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\FormModule\CustomIntakeForms.aspx.vb">
+      <DependentUpon>CustomIntakeForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\PropertyModule\Features.aspx.designer.vb">
+      <DependentUpon>Features.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\PropertyModule\Features.aspx.vb">
+      <DependentUpon>Features.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\PropertyModule\Properties.aspx.designer.vb">
+      <DependentUpon>Properties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\PropertyModule\Properties.aspx.vb">
+      <DependentUpon>Properties.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\SalesLeads.aspx.designer.vb">
+      <DependentUpon>SalesLeads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\SalesLeads.aspx.vb">
+      <DependentUpon>SalesLeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\UploadFiles.aspx.designer.vb">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\UploadFiles.aspx.vb">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\DatabaseConsole.aspx.designer.vb">
+      <DependentUpon>DatabaseConsole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\DatabaseConsole.aspx.vb">
+      <DependentUpon>DatabaseConsole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\EventModule\Events.aspx.designer.vb">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\EventModule\Events.aspx.vb">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Links.aspx.designer.vb">
+      <DependentUpon>Links.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Links.aspx.vb">
+      <DependentUpon>Links.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\FAQ.aspx.designer.vb">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\FAQ.aspx.vb">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\EditorControls\CKEditorImageBrowser.aspx.designer.vb">
+      <DependentUpon>CKEditorImageBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\EditorControls\CKEditorImageBrowser.aspx.vb">
+      <DependentUpon>CKEditorImageBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ExcelTransfers\TransferUsers.aspx.designer.vb">
+      <DependentUpon>TransferUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ExcelTransfers\TransferUsers.aspx.vb">
+      <DependentUpon>TransferUsers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Maintenance.aspx.designer.vb">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Maintenance.aspx.vb">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\MembershipStatus.aspx.designer.vb">
+      <DependentUpon>MembershipStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\CalendarModule\MembershipStatus.aspx.vb">
+      <DependentUpon>MembershipStatus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Settings.aspx.designer.vb">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Settings.aspx.vb">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ClientCustom\BoxCalculator.aspx.designer.vb">
+      <DependentUpon>BoxCalculator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ClientCustom\BoxCalculator.aspx.vb">
+      <DependentUpon>BoxCalculator.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Customers.aspx.designer.vb">
+      <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Customers.aspx.vb">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\SalesRequest.aspx.designer.vb">
+      <DependentUpon>SalesRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\SalesRequest.aspx.vb">
+      <DependentUpon>SalesRequest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Print\PrintOrder.aspx.designer.vb">
+      <DependentUpon>PrintOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Print\PrintOrder.aspx.vb">
+      <DependentUpon>PrintOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\DailyDiscountReport.aspx.designer.vb">
+      <DependentUpon>DailyDiscountReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\DailyDiscountReport.aspx.vb">
+      <DependentUpon>DailyDiscountReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\ProductSalesReport.aspx.designer.vb">
+      <DependentUpon>ProductSalesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\ProductSalesReport.aspx.vb">
+      <DependentUpon>ProductSalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\MonthlyBranchReport.aspx.designer.vb">
+      <DependentUpon>MonthlyBranchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\MonthlyBranchReport.aspx.vb">
+      <DependentUpon>MonthlyBranchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\SalesBreakdown.aspx.designer.vb">
+      <DependentUpon>SalesBreakdown.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\SalesBreakdown.aspx.vb">
+      <DependentUpon>SalesBreakdown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\SalesRepRequestReport.aspx.designer.vb">
+      <DependentUpon>SalesRepRequestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\SalesRepRequestReport.aspx.vb">
+      <DependentUpon>SalesRepRequestReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Shipping\FixedShippingDetails.aspx.designer.vb">
+      <DependentUpon>FixedShippingDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Shipping\FixedShippingDetails.aspx.vb">
+      <DependentUpon>FixedShippingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ProductInfoSheet.aspx.designer.vb">
+      <DependentUpon>ProductInfoSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ProductInfoSheet.aspx.vb">
+      <DependentUpon>ProductInfoSheet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ProductReviews.aspx.designer.vb">
+      <DependentUpon>ProductReviews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ProductReviews.aspx.vb">
+      <DependentUpon>ProductReviews.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\MonthlySales.aspx.designer.vb">
+      <DependentUpon>MonthlySales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\MonthlySales.aspx.vb">
+      <DependentUpon>MonthlySales.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Shipping\ShippingRateDetails.aspx.designer.vb">
+      <DependentUpon>ShippingRateDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Shipping\ShippingRateDetails.aspx.vb">
+      <DependentUpon>ShippingRateDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Shipping\ShippingZoneDetails.aspx.designer.vb">
+      <DependentUpon>ShippingZoneDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Shipping\ShippingZoneDetails.aspx.vb">
+      <DependentUpon>ShippingZoneDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_GlobalResources\AuthenticationResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenticationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CCBlogging\Blog.aspx.designer.vb">
+      <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCBlogging\Blog.aspx.vb">
+      <DependentUpon>Blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCBlogging\BlogEntries.aspx.designer.vb">
+      <DependentUpon>BlogEntries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCBlogging\BlogEntries.aspx.vb">
+      <DependentUpon>BlogEntries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\CloudCarProductListingPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Colours.aspx.designer.vb">
+      <DependentUpon>Colours.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Colours.aspx.vb">
+      <DependentUpon>Colours.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\WishList.aspx.designer.vb">
+      <DependentUpon>WishList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\WishList.aspx.vb">
+      <DependentUpon>WishList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Admin\AlertMessageControl.ascx.designer.vb">
+      <DependentUpon>AlertMessageControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Admin\AlertMessageControl.ascx.vb">
+      <DependentUpon>AlertMessageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Admin\CKEditorControl.ascx.designer.vb">
+      <DependentUpon>CKEditorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Admin\CKEditorControl.ascx.vb">
+      <DependentUpon>CKEditorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Admin\TipMessageControl.ascx.designer.vb">
+      <DependentUpon>TipMessageControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Admin\TipMessageControl.ascx.vb">
+      <DependentUpon>TipMessageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Admin\UserAccountControl.ascx.designer.vb">
+      <DependentUpon>UserAccountControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Admin\UserAccountControl.ascx.vb">
+      <DependentUpon>UserAccountControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\BrandControl.ascx.designer.vb">
+      <DependentUpon>BrandControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\BrandControl.ascx.vb">
+      <DependentUpon>BrandControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ColorControl.ascx.designer.vb">
+      <DependentUpon>ColorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ColorControl.ascx.vb">
+      <DependentUpon>ColorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\LatestControl.ascx.designer.vb">
+      <DependentUpon>LatestControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\LatestControl.ascx.vb">
+      <DependentUpon>LatestControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\RecomendedProductControl.ascx.designer.vb">
+      <DependentUpon>RecomendedProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\RecomendedProductControl.ascx.vb">
+      <DependentUpon>RecomendedProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductListControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\WishList.ascx.designer.vb">
+      <DependentUpon>WishList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\WishList.ascx.vb">
+      <DependentUpon>WishList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\CareerModule\CareerDetails.aspx.designer.vb">
+      <DependentUpon>CareerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\CareerModule\CareerDetails.aspx.vb">
+      <DependentUpon>CareerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\CareerModule\Careers.aspx.designer.vb">
+      <DependentUpon>Careers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\CareerModule\Careers.aspx.vb">
+      <DependentUpon>Careers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\EventModule\EventDetails.aspx.designer.vb">
+      <DependentUpon>EventDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\EventModule\EventDetails.aspx.vb">
+      <DependentUpon>EventDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\NewsModule\NewsDetails.aspx.designer.vb">
+      <DependentUpon>NewsDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\NewsModule\NewsDetails.aspx.vb">
+      <DependentUpon>NewsDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\NewsModule\News.aspx.designer.vb">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\NewsModule\News.aspx.vb">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ToolboxContentPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\CategoriesControl.ascx.designer.vb">
+      <DependentUpon>CategoriesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\CategoriesControl.ascx.vb">
+      <DependentUpon>CategoriesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ShippingControls\ShippingRatesControl.ascx.designer.vb">
+      <DependentUpon>ShippingRatesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ShippingControls\ShippingRatesControl.ascx.vb">
+      <DependentUpon>ShippingRatesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ShoppingProgressControl.ascx.designer.vb">
+      <DependentUpon>ShoppingProgressControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ShoppingProgressControl.ascx.vb">
+      <DependentUpon>ShoppingProgressControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\TopSellersControl.ascx.designer.vb">
+      <DependentUpon>TopSellersControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\TopSellersControl.ascx.vb">
+      <DependentUpon>TopSellersControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CloudCarScriptManagementControl.ascx.designer.vb">
+      <DependentUpon>CloudCarScriptManagementControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CloudCarScriptManagementControl.ascx.vb">
+      <DependentUpon>CloudCarScriptManagementControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\EventsModule\EventsDetailsControl.ascx.designer.vb">
+      <DependentUpon>EventsDetailsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\EventsModule\EventsDetailsControl.ascx.vb">
+      <DependentUpon>EventsDetailsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\NewsModule\NewsDetailsControl.ascx.designer.vb">
+      <DependentUpon>NewsDetailsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\NewsModule\NewsDetailsControl.ascx.vb">
+      <DependentUpon>NewsDetailsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\BreadCrumbControl.ascx.designer.vb">
+      <DependentUpon>BreadCrumbControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\BreadCrumbControl.ascx.vb">
+      <DependentUpon>BreadCrumbControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\CallToActionControl.ascx.designer.vb">
+      <DependentUpon>CallToActionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\CallToActionControl.ascx.vb">
+      <DependentUpon>CallToActionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\ChildPageMenuControl.ascx.designer.vb">
+      <DependentUpon>ChildPageMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\ChildPageMenuControl.ascx.vb">
+      <DependentUpon>ChildPageMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\ContentControl.ascx.designer.vb">
+      <DependentUpon>ContentControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\ContentControl.ascx.vb">
+      <DependentUpon>ContentControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\CameraRotatorControl.ascx.designer.vb">
+      <DependentUpon>CameraRotatorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\CameraRotatorControl.ascx.vb">
+      <DependentUpon>CameraRotatorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\HeaderControl.ascx.designer.vb">
+      <DependentUpon>HeaderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\HeaderControl.ascx.vb">
+      <DependentUpon>HeaderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\HeaderImageControl.ascx.designer.vb">
+      <DependentUpon>HeaderImageControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\HeaderImageControl.ascx.vb">
+      <DependentUpon>HeaderImageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\RotatorControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\ScriptControl.ascx.designer.vb">
+      <DependentUpon>ScriptControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\ScriptControl.ascx.vb">
+      <DependentUpon>ScriptControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CalendarModule\MyScheduleControl.ascx.designer.vb">
+      <DependentUpon>MyScheduleControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CalendarModule\MyScheduleControl.ascx.vb">
+      <DependentUpon>MyScheduleControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CalendarModule\ScheduleCalendarControl.ascx.designer.vb">
+      <DependentUpon>ScheduleCalendarControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CalendarModule\ScheduleCalendarControl.ascx.vb">
+      <DependentUpon>ScheduleCalendarControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CareerModule\CareerListControl.ascx.designer.vb">
+      <DependentUpon>CareerListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CareerModule\CareerListControl.ascx.vb">
+      <DependentUpon>CareerListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\EventsModule\EventsCalendar.ascx.designer.vb">
+      <DependentUpon>EventsCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\EventsModule\EventsCalendar.ascx.vb">
+      <DependentUpon>EventsCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\JShowOffRotatorControl.ascx.designer.vb">
+      <DependentUpon>JShowOffRotatorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\JShowOffRotatorControl.ascx.vb">
+      <DependentUpon>JShowOffRotatorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCFramework\Blogging\AuthorController.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\AuthorizeDotNetClient.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\BraintreeClient.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\IPaymentProcessClient.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\DwollaClient.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\MonerisClient.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\OptimalPaymentsClient.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\PayPalClient.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\PayzaSendMoneyClient.vb" />
+    <Compile Include="CCFramework\Commerce\Product\ProductOptionController.vb" />
+    <Compile Include="CCFramework\Commerce\Product\ProductRecomendationController.vb" />
+    <Compile Include="CCFramework\Commerce\ShoppingCart\ProductShoppingCartMediator.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\CanadaPost\CanadaPostServiceProxy.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\Fixed\FixedShippingProxy.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\Purolator\PurolatorServiceProxy.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\Purolator\PurolatorServiceType.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\ShippingRatesController.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\ShippingService.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\ShippingServiceProxy.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\UPS\PackagingMethod.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\UPS\PickupType.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\UPS\ServiceType.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\UPS\CustomerClassification.vb" />
+    <Compile Include="CCFramework\Commerce\Shipping\UPS\UpsServiceProxy.vb" />
+    <Compile Include="CCFramework\ContentManagement\CalendarModule\BookingController.vb" />
+    <Compile Include="CCFramework\ContentManagement\CallToActionModule\CallToActionController.vb" />
+    <Compile Include="CCFramework\ContentManagement\CareerModule\CareerController.vb" />
+    <Compile Include="CCContentManagement\CloudCarContentPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCFramework\ContentManagement\ContentPageController.vb" />
+    <Compile Include="CCFramework\ContentManagement\FeatureController.vb" />
+    <Compile Include="CCFramework\ContentManagement\FormModule\EFormFieldControlType.vb" />
+    <Compile Include="CCFramework\ContentManagement\FormModule\FormController.vb" />
+    <Compile Include="CCFramework\ContentManagement\FormModule\FormDataController.vb" />
+    <Compile Include="CCFramework\ContentManagement\FormModule\FormFieldController.vb" />
+    <Compile Include="CCFramework\ContentManagement\ImageGalleryController.vb" />
+    <Compile Include="CCFramework\ContentManagement\FileUploadController.vb" />
+    <Compile Include="CCFramework\ContentManagement\MenuItemController.vb" />
+    <Compile Include="CCFramework\ContentManagement\NewsModule\NewsController.vb" />
+    <Compile Include="CCFramework\ContentManagement\PropertyModule\PropertyController.vb" />
+    <Compile Include="CCFramework\ContentManagement\VideoController.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ShippingProcessing\CanadaPostProvider.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ShippingProcessing\FixedShippingProvider.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ShippingProcessing\IShippingProvider.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ShippingProcessing\ShippingRate.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ShippingProcessing\UnitedPostalServiceProvider.vb" />
+    <Compile Include="CCFramework\Commerce\ShoppingCart\ShoppingCartHelper.vb" />
+    <Compile Include="CCFramework\Commerce\ClientControls\BoxCalculatorController.vb" />
+    <Compile Include="CCFramework\Commerce\SalesRequestController.vb" />
+    <Compile Include="CCFramework\Commerce\FixedShippingController.vb" />
+    <Compile Include="CCFramework\Core\AnalyticsAccessor.vb" />
+    <Compile Include="CCFramework\Core\FtpHelper.vb" />
+    <Compile Include="CCFramework\Core\CSVGenerator.vb" />
+    <Compile Include="CCFramework\Core\ErrorController.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\PaymentStatus.vb" />
+    <Compile Include="CCFramework\Core\SettingController.vb" />
+    <Compile Include="CCFramework\Core\Settings.vb">
+    </Compile>
+    <Compile Include="CCFramework\Core\SystemMessageReporter.vb" />
+    <Compile Include="CCFramework\GAConnect\GAAccessor.vb" />
+    <Compile Include="CCFramework\GAConnect\GABaseData.vb" />
+    <Compile Include="CCFramework\GAConnect\GAData.vb" />
+    <Compile Include="CCFramework\GAConnect\GADataFetcher.vb" />
+    <Compile Include="CCFramework\GAConnect\GADimension.vb" />
+    <Compile Include="CCFramework\GAConnect\GAExtensionMethods.vb" />
+    <Compile Include="CCFramework\GAConnect\GAHttpRequests.vb" />
+    <Compile Include="CCFramework\GAConnect\GAMetric.vb" />
+    <Compile Include="CCFramework\GAConnect\GAProfile.vb" />
+    <Compile Include="CCFramework\GAConnect\GASortDirection.vb" />
+    <Compile Include="CCFramework\Model\Blog.vb">
+      <DependentUpon>Blog.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CCFramework\Model\CMS.vb">
+      <DependentUpon>CMS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CCFramework\Model\Commerce.vb">
+      <DependentUpon>Commerce.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CCFramework\TestCases\BraintreeClientTest.vb" />
+    <Compile Include="CCFramework\TestCases\OrderControllerTest.vb" />
+    <Compile Include="CCContentManagement\CalendarModule\Calendar.aspx.designer.vb">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\CalendarModule\Calendar.aspx.vb">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\CalendarModule\Instructor.aspx.designer.vb">
+      <DependentUpon>Instructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\CalendarModule\Instructor.aspx.vb">
+      <DependentUpon>Instructor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\CalendarModule\Program.aspx.designer.vb">
+      <DependentUpon>Program.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\CalendarModule\Program.aspx.vb">
+      <DependentUpon>Program.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\CalendarModule\ProgramList.aspx.designer.vb">
+      <DependentUpon>ProgramList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\CalendarModule\ProgramList.aspx.vb">
+      <DependentUpon>ProgramList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ProductModule\Categories.aspx.designer.vb">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ProductModule\Categories.aspx.vb">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ClientForms\GrantsForm.aspx.designer.vb">
+      <DependentUpon>GrantsForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ClientForms\GrantsForm.aspx.vb">
+      <DependentUpon>GrantsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ClientForms\SignUpForm.aspx.designer.vb">
+      <DependentUpon>SignUpForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ClientForms\SignUpForm.aspx.vb">
+      <DependentUpon>SignUpForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ClientForms\EstimateForm.aspx.designer.vb">
+      <DependentUpon>EstimateForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ClientForms\EstimateForm.aspx.vb">
+      <DependentUpon>EstimateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ProductModule\Details.aspx.designer.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ProductModule\Details.aspx.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\Files.aspx.designer.vb">
+      <DependentUpon>Files.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\Files.aspx.vb">
+      <DependentUpon>Files.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\FormModule\FormDisplay.aspx.designer.vb">
+      <DependentUpon>FormDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\FormModule\FormDisplay.aspx.vb">
+      <DependentUpon>FormDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\Gallery.aspx.designer.vb">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\Gallery.aspx.vb">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ProductModule\Products.aspx.designer.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ProductModule\Products.aspx.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\PropertyModule\PropertyDetails.aspx.designer.vb">
+      <DependentUpon>PropertyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\PropertyModule\PropertyDetails.aspx.vb">
+      <DependentUpon>PropertyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\PropertyModule\PropertyResults.aspx.designer.vb">
+      <DependentUpon>PropertyResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\PropertyModule\PropertyResults.aspx.vb">
+      <DependentUpon>PropertyResults.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\PropertyModule\PropertySearch.aspx.designer.vb">
+      <DependentUpon>PropertySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\PropertyModule\PropertySearch.aspx.vb">
+      <DependentUpon>PropertySearch.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\VideosModule\Videos.aspx.designer.vb">
+      <DependentUpon>Videos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\VideosModule\Videos.aspx.vb">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\AuthorsControl.ascx.designer.vb">
+      <DependentUpon>AuthorsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\AuthorsControl.ascx.vb">
+      <DependentUpon>AuthorsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\BlogThumbnailsControl.ascx.designer.vb">
+      <DependentUpon>BlogThumbnailsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\BlogThumbnailsControl.ascx.vb">
+      <DependentUpon>BlogThumbnailsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\AdminMenuDisplayControl.ascx.designer.vb">
+      <DependentUpon>AdminMenuDisplayControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\AdminMenuDisplayControl.ascx.vb">
+      <DependentUpon>AdminMenuDisplayControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\RecentEventAndNewsControl.ascx.designer.vb">
+      <DependentUpon>RecentEventAndNewsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\RecentEventAndNewsControl.ascx.vb">
+      <DependentUpon>RecentEventAndNewsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\GalleryControls\ImageGalleryControl.ascx.designer.vb">
+      <DependentUpon>ImageGalleryControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\GalleryControls\ImageGalleryControl.ascx.vb">
+      <DependentUpon>ImageGalleryControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\MenuDisplayControl.ascx.designer.vb">
+      <DependentUpon>MenuDisplayControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\MenuDisplayControl.ascx.vb">
+      <DependentUpon>MenuDisplayControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\ProductControls\ProductControl.ascx.designer.vb">
+      <DependentUpon>ProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\ProductControls\ProductControl.ascx.vb">
+      <DependentUpon>ProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\NewsModule\RecentNewsControl.ascx.designer.vb">
+      <DependentUpon>RecentNewsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\NewsModule\RecentNewsControl.ascx.vb">
+      <DependentUpon>RecentNewsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\RecentVideoControl.ascx.designer.vb">
+      <DependentUpon>RecentVideoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\RecentVideoControl.ascx.vb">
+      <DependentUpon>RecentVideoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\TestimonialControl.ascx.designer.vb">
+      <DependentUpon>TestimonialControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\TestimonialControl.ascx.vb">
+      <DependentUpon>TestimonialControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\SearchControl.ascx.designer.vb">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\SearchControl.ascx.vb">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ClientControls\BoxCalculatorControl.ascx.designer.vb">
+      <DependentUpon>BoxCalculatorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ClientControls\BoxCalculatorControl.ascx.vb">
+      <DependentUpon>BoxCalculatorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Addresses.aspx.designer.vb">
+      <DependentUpon>Addresses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Addresses.aspx.vb">
+      <DependentUpon>Addresses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Brands.aspx.designer.vb">
+      <DependentUpon>Brands.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Brands.aspx.vb">
+      <DependentUpon>Brands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Categories.aspx.designer.vb">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Categories.aspx.vb">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Colours.aspx.designer.vb">
+      <DependentUpon>Colours.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Colours.aspx.vb">
+      <DependentUpon>Colours.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Countries.aspx.designer.vb">
+      <DependentUpon>Countries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Countries.aspx.vb">
+      <DependentUpon>Countries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Inventory.aspx.designer.vb">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Inventory.aspx.vb">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ClientCustom\EditMenuCategories.aspx.designer.vb">
+      <DependentUpon>EditMenuCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ClientCustom\EditMenuCategories.aspx.vb">
+      <DependentUpon>EditMenuCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Provinces.aspx.designer.vb">
+      <DependentUpon>Provinces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Provinces.aspx.vb">
+      <DependentUpon>Provinces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Sizes.aspx.designer.vb">
+      <DependentUpon>Sizes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Sizes.aspx.vb">
+      <DependentUpon>Sizes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\OrderDetails.aspx.designer.vb">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\OrderDetails.aspx.vb">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Orders.aspx.designer.vb">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Orders.aspx.vb">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ProductDetails.aspx.designer.vb">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\ProductDetails.aspx.vb">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Products.aspx.designer.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Products.aspx.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Subscribers.aspx.designer.vb">
+      <DependentUpon>Subscribers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\ContentManagement\Subscribers.aspx.vb">
+      <DependentUpon>Subscribers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\PromoCodes.aspx.designer.vb">
+      <DependentUpon>PromoCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\PromoCodes.aspx.vb">
+      <DependentUpon>PromoCodes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Users.aspx.designer.vb">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Users.aspx.vb">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCFramework\Commerce\PromoCodeController.vb" />
+    <Compile Include="CCControls\DataPagerRepeater.vb" />
+    <Compile Include="CCControls\Commerce\ClearanceControl.ascx.designer.vb">
+      <DependentUpon>ClearanceControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ClearanceControl.ascx.vb">
+      <DependentUpon>ClearanceControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\BrandCategoriesControl.ascx.designer.vb">
+      <DependentUpon>BrandCategoriesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\BrandCategoriesControl.ascx.vb">
+      <DependentUpon>BrandCategoriesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\QuickShopControl.ascx.designer.vb">
+      <DependentUpon>QuickShopControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\QuickShopControl.ascx.vb">
+      <DependentUpon>QuickShopControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Validators\RotatorOrderValidator.vb" />
+    <Compile Include="CCFramework\TestCases\ShoppingCartControllerTest.vb" />
+    <Compile Include="CCCommerce\Distributor\DistributorOrderDetails.aspx.designer.vb">
+      <DependentUpon>DistributorOrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Distributor\DistributorOrderDetails.aspx.vb">
+      <DependentUpon>DistributorOrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Distributor\DistributorOrders.aspx.designer.vb">
+      <DependentUpon>DistributorOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Distributor\DistributorOrders.aspx.vb">
+      <DependentUpon>DistributorOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCFramework\TestCases\SimpleUserTest.vb" />
+    <Compile Include="CCMasterPages\Admin.Master.designer.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CCMasterPages\Admin.Master.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCMasterPages\Email.Master.designer.vb">
+      <DependentUpon>Email.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CCMasterPages\Email.Master.vb">
+      <DependentUpon>Email.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCMasterPages\Home.Master.designer.vb">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CCMasterPages\Home.Master.vb">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCMasterPages\Main.Master.designer.vb">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CCMasterPages\Main.Master.vb">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCMasterPages\Mobile.Master.designer.vb">
+      <DependentUpon>Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CCMasterPages\Mobile.Master.vb">
+      <DependentUpon>Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCMasterPages\Print.Master.designer.vb">
+      <DependentUpon>Print.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CCMasterPages\Print.Master.vb">
+      <DependentUpon>Print.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientHeaders.aspx.designer.vb">
+      <DependentUpon>ClientHeaders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientHeaders.aspx.vb">
+      <DependentUpon>ClientHeaders.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="handlers\Adapters\SessionPageStateAdapter.vb" />
+    <Compile Include="handlers\Reports\CSVReportHandler.ashx.vb">
+      <DependentUpon>CSVReportHandler.ashx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCFramework\Model\CMS1.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CCFramework\Model\Errors.designer.vb">
+      <DependentUpon>Errors.dbml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CCFramework\Model\Errors.vb">
+      <DependentUpon>Errors.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CCAuthentication\ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAuthentication\ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCFramework\Blogging\BlogController.vb" />
+    <Compile Include="CCFramework\Blogging\CommentController.vb" />
+    <Compile Include="CCFramework\Blogging\WriteRss.vb" />
+    <Compile Include="CCFramework\ContentManagement\ImageRotatorController.vb" />
+    <Compile Include="CCFramework\ContentManagement\SalesInquiryController.vb" />
+    <Compile Include="CCFramework\ContentManagement\TestimonialController.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ShippingHelper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCFramework\Commerce\EnumPriceLevel.vb" />
+    <Compile Include="CCFramework\Commerce\InventoryController.vb" />
+    <Compile Include="CCFramework\Commerce\ProductDownloadController.vb" />
+    <Compile Include="CCFramework\Core\Functions.vb" />
+    <Compile Include="CCFramework\Core\Locator.vb" />
+    <Compile Include="CCFramework\Core\Search.vb" />
+    <Compile Include="CCFramework\Core\SiteMapProvider.vb" />
+    <Compile Include="CCContentManagement\ClientForms\Menu.aspx.designer.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ClientForms\Menu.aspx.vb">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\EventModule\Events.aspx.designer.vb">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\EventModule\Events.aspx.vb">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\Testimonials.aspx.designer.vb">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\Testimonials.aspx.vb">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\ContentPage.aspx.designer.vb">
+      <DependentUpon>ContentPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\ContentPage.aspx.vb">
+      <DependentUpon>ContentPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCContentManagement\Unsubscribe.aspx.designer.vb">
+      <DependentUpon>Unsubscribe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\Unsubscribe.aspx.vb">
+      <DependentUpon>Unsubscribe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\AddCommentControl.ascx.designer.vb">
+      <DependentUpon>AddCommentControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\AddCommentControl.ascx.vb">
+      <DependentUpon>AddCommentControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FBCommentsControl.ascx.designer.vb">
+      <DependentUpon>FBCommentsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FBCommentsControl.ascx.vb">
+      <DependentUpon>FBCommentsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FBLikeBoxControl.ascx.designer.vb">
+      <DependentUpon>FBLikeBoxControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FBLikeBoxControl.ascx.vb">
+      <DependentUpon>FBLikeBoxControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FBLikeButtonControl.ascx.designer.vb">
+      <DependentUpon>FBLikeButtonControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FBLikeButtonControl.ascx.vb">
+      <DependentUpon>FBLikeButtonControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FollowUsControl.ascx.designer.vb">
+      <DependentUpon>FollowUsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\FollowUsControl.ascx.vb">
+      <DependentUpon>FollowUsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\LatestBlogControl.ascx.designer.vb">
+      <DependentUpon>LatestBlogControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\LatestBlogControl.ascx.vb">
+      <DependentUpon>LatestBlogControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\MailingListControl.ascx.designer.vb">
+      <DependentUpon>MailingListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\MailingListControl.ascx.vb">
+      <DependentUpon>MailingListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\RecentBlogsControl.ascx.designer.vb">
+      <DependentUpon>RecentBlogsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\RecentBlogsControl.ascx.vb">
+      <DependentUpon>RecentBlogsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\SocialMediaControl.ascx.designer.vb">
+      <DependentUpon>SocialMediaControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\SocialMediaControl.ascx.vb">
+      <DependentUpon>SocialMediaControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\CustomEditor.vb" />
+    <Compile Include="CCControls\ContentManagement\DatabaseImageControl.ascx.designer.vb">
+      <DependentUpon>DatabaseImageControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\DatabaseImageControl.ascx.vb">
+      <DependentUpon>DatabaseImageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\ContactControl.ascx.designer.vb">
+      <DependentUpon>ContactControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\ContactControl.ascx.vb">
+      <DependentUpon>ContactControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\SubMenuControl.ascx.designer.vb">
+      <DependentUpon>SubMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\SubMenuControl.ascx.vb">
+      <DependentUpon>SubMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\HelpButtonControl.ascx.designer.vb">
+      <DependentUpon>HelpButtonControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\HelpButtonControl.ascx.vb">
+      <DependentUpon>HelpButtonControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\NivoRotatorControl.ascx.designer.vb">
+      <DependentUpon>NivoRotatorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\PageModule\NivoRotatorControl.ascx.vb">
+      <DependentUpon>NivoRotatorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Blogging\TwitterFeedControl.ascx.designer.vb">
+      <DependentUpon>TwitterFeedControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Blogging\TwitterFeedControl.ascx.vb">
+      <DependentUpon>TwitterFeedControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\AddProductReviewControl.ascx.designer.vb">
+      <DependentUpon>AddProductReviewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\AddProductReviewControl.ascx.vb">
+      <DependentUpon>AddProductReviewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\PaybackTotalControl.ascx.designer.vb">
+      <DependentUpon>PaybackTotalControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\PaybackTotalControl.ascx.vb">
+      <DependentUpon>PaybackTotalControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Validators\PermalinkValidator.vb" />
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handlers\Files\FileDeniedHandler.vb" />
+    <Compile Include="handlers\Files\FileDownloadHandler.ashx.vb">
+      <DependentUpon>FileDownloadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handlers\Scripts\CombineScriptHandler.ashx.vb">
+      <DependentUpon>CombineScriptHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handlers\Scripts\CompressScriptHandler.vb" />
+    <Compile Include="handlers\Images\GenerateOptimizedImage.ashx.vb">
+      <DependentUpon>GenerateOptimizedImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handlers\Images\GetImage.aspx.designer.vb">
+      <DependentUpon>GetImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="handlers\Images\GetImage.aspx.vb">
+      <DependentUpon>GetImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handlers\Routes\LegacyRouteHandler.vb" />
+    <Compile Include="handlers\Routes\RoutableHandler.vb">
+    </Compile>
+    <Compile Include="handlers\Routes\RoutablePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handlers\Routes\RouteHandler.vb" />
+    <Compile Include="handlers\Routes\RoutingHandler.vb" />
+    <Compile Include="CCContentManagement\Links.aspx.designer.vb">
+      <DependentUpon>Links.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCContentManagement\Links.aspx.vb">
+      <DependentUpon>Links.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCFramework\Model\Blog.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Blog.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CCFramework\ContentManagement\EventsModule\EventsController.vb" />
+    <Compile Include="CCFramework\ContentManagement\FAQController.vb" />
+    <Compile Include="CCFramework\ContentManagement\CalendarModule\InstructorController.vb" />
+    <Compile Include="CCFramework\ContentManagement\LinksController.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ApplicationFunctions.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\BeanStremClient.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\CCFunctions.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\ImageFunctions.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\Purchase.vb" />
+    <Compile Include="CCFramework\Commerce\BusinessProcess\SendEmails.vb" />
+    <Compile Include="CCFramework\Commerce\AddressController.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\PaymentController.vb" />
+    <Compile Include="CCFramework\Commerce\BrandController.vb" />
+    <Compile Include="CCFramework\Commerce\CategoryController.vb" />
+    <Compile Include="CCFramework\Commerce\ColourController.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\CreditCardPaymentController.vb" />
+    <Compile Include="CCFramework\Core\IDataControllerClass.vb" />
+    <Compile Include="CCFramework\Commerce\OrderController.vb" />
+    <Compile Include="CCFramework\Commerce\ProductController.vb" />
+    <Compile Include="CCFramework\Commerce\ShoppingCart\ShoppingCartController.vb" />
+    <Compile Include="CCFramework\Core\UserController.vb" />
+    <Compile Include="CCFramework\Commerce\SizesController.vb" />
+    <Compile Include="CCFramework\Commerce\EnumApprovalState.vb" />
+    <Compile Include="CCFramework\Commerce\PaymentProcessing\EnumPaymentType.vb" />
+    <Compile Include="CCFramework\Model\Commerce.designer.vb">
+      <DependentUpon>Commerce.dbml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CCFramework\Core\PictureController.vb" />
+    <Compile Include="CCFramework\ContentManagement\CalendarModule\ProgramController.vb" />
+    <Compile Include="CCFramework\ContentManagement\CalendarModule\ScheduleController.vb" />
+    <Compile Include="CCFramework\ContentManagement\SubscriptionController.vb" />
+    <Compile Include="CCControls\ContentManagement\EventsModule\EventsControl.ascx.designer.vb">
+      <DependentUpon>EventsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\EventsModule\EventsControl.ascx.vb">
+      <DependentUpon>EventsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\LinkControl.ascx.designer.vb">
+      <DependentUpon>LinkControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\LinkControl.ascx.vb">
+      <DependentUpon>LinkControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ModalPopup\ModalPopup.ascx.designer.vb">
+      <DependentUpon>ModalPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ModalPopup\ModalPopup.ascx.vb">
+      <DependentUpon>ModalPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\NewsModule\NewsControl.ascx.designer.vb">
+      <DependentUpon>NewsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\NewsModule\NewsControl.ascx.vb">
+      <DependentUpon>NewsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\SnippetControl.ascx.designer.vb">
+      <DependentUpon>SnippetControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\SnippetControl.ascx.vb">
+      <DependentUpon>SnippetControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\ProductControl.ascx.designer.vb">
+      <DependentUpon>ProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\ProductControl.ascx.vb">
+      <DependentUpon>ProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ShoppingDetailsControl.ascx.designer.vb">
+      <DependentUpon>ShoppingDetailsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ShoppingDetailsControl.ascx.vb">
+      <DependentUpon>ShoppingDetailsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\SimpleProductControl.ascx.designer.vb">
+      <DependentUpon>SimpleProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\Commerce\ProductControls\SimpleProductControl.ascx.vb">
+      <DependentUpon>SimpleProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\SubscribeControl.ascx.designer.vb">
+      <DependentUpon>SubscribeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\SubscribeControl.ascx.vb">
+      <DependentUpon>SubscribeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\EventsModule\UpcomingEventsControl.ascx.designer.vb">
+      <DependentUpon>UpcomingEventsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\ContentManagement\EventsModule\UpcomingEventsControl.ascx.vb">
+      <DependentUpon>UpcomingEventsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCControls\UploadPicture.ascx.designer.vb">
+      <DependentUpon>UploadPicture.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CCControls\UploadPicture.ascx.vb">
+      <DependentUpon>UploadPicture.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="handlers\GetPDF.ashx.vb">
+      <DependentUpon>GetPDF.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handlers\Images\GetPicture.ashx.vb">
+      <DependentUpon>GetPicture.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAuthentication\Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAuthentication\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="CCAuthentication\Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAuthentication\Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\DailySales.aspx.designer.vb">
+      <DependentUpon>DailySales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAdmin\Commerce\Reports\DailySales.aspx.vb">
+      <DependentUpon>DailySales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAuthentication\ResetPassword.aspx.designer.vb">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAuthentication\ResetPassword.aspx.vb">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.vb">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.vb">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\BlogCategoryService.asmx.vb">
+      <DependentUpon>BlogCategoryService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="services\PromoCodeService.asmx.vb">
+      <DependentUpon>PromoCodeService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Brands.aspx.designer.vb">
+      <DependentUpon>Brands.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Brands.aspx.vb">
+      <DependentUpon>Brands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Categories.aspx.designer.vb">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Categories.aspx.vb">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Checkout.aspx.designer.vb">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Checkout.aspx.vb">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Clearance.aspx.designer.vb">
+      <DependentUpon>Clearance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Clearance.aspx.vb">
+      <DependentUpon>Clearance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\CommingSoon.aspx.designer.vb">
+      <DependentUpon>CommingSoon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\CommingSoon.aspx.vb">
+      <DependentUpon>CommingSoon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Details.aspx.designer.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Details.aspx.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Email\DistributorOrderInvoice.aspx.designer.vb">
+      <DependentUpon>DistributorOrderInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Email\DistributorOrderInvoice.aspx.vb">
+      <DependentUpon>DistributorOrderInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Email\NewOrderInvoice.aspx.designer.vb">
+      <DependentUpon>NewOrderInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Email\NewOrderInvoice.aspx.vb">
+      <DependentUpon>NewOrderInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Email\TestEmail.aspx.designer.vb">
+      <DependentUpon>TestEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Email\TestEmail.aspx.vb">
+      <DependentUpon>TestEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Membership\Contract.aspx.designer.vb">
+      <DependentUpon>Contract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Membership\Contract.aspx.vb">
+      <DependentUpon>Contract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Membership\MemberApp.aspx.designer.vb">
+      <DependentUpon>MemberApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Membership\MemberApp.aspx.vb">
+      <DependentUpon>MemberApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Membership\Waiver.aspx.designer.vb">
+      <DependentUpon>Waiver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Membership\Waiver.aspx.vb">
+      <DependentUpon>Waiver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileCheckout.aspx.designer.vb">
+      <DependentUpon>MobileCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileCheckout.aspx.vb">
+      <DependentUpon>MobileCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileShoppingCart.aspx.designer.vb">
+      <DependentUpon>MobileShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileShoppingCart.aspx.vb">
+      <DependentUpon>MobileShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileTest.aspx.designer.vb">
+      <DependentUpon>MobileTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileTest.aspx.vb">
+      <DependentUpon>MobileTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileThankYou.aspx.designer.vb">
+      <DependentUpon>MobileThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Mobile\MobileThankYou.aspx.vb">
+      <DependentUpon>MobileThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ProcessVBV.ashx.vb">
+      <DependentUpon>ProcessVBV.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ProductImages.aspx.designer.vb">
+      <DependentUpon>ProductImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ProductImages.aspx.vb">
+      <DependentUpon>ProductImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\Products.aspx.designer.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\Products.aspx.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Forms\RequestForm.aspx.designer.vb">
+      <DependentUpon>RequestForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Forms\RequestForm.aspx.vb">
+      <DependentUpon>RequestForm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ShoppingCart.aspx.designer.vb">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ShoppingCart.aspx.vb">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Special\FreeProduct.aspx.designer.vb">
+      <DependentUpon>FreeProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Special\FreeProduct.aspx.vb">
+      <DependentUpon>FreeProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Special\RedeemForm.aspx.designer.vb">
+      <DependentUpon>RedeemForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ClientPages\Special\RedeemForm.aspx.vb">
+      <DependentUpon>RedeemForm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\ThankYou.aspx.designer.vb">
+      <DependentUpon>ThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\ThankYou.aspx.vb">
+      <DependentUpon>ThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCCommerce\TopSellers.aspx.designer.vb">
+      <DependentUpon>TopSellers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCCommerce\TopSellers.aspx.vb">
+      <DependentUpon>TopSellers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCAuthentication\UserProfile.aspx.designer.vb">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CCAuthentication\UserProfile.aspx.vb">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\UserService.asmx.vb">
+      <DependentUpon>UserService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="services\WebServices.asmx.vb">
+      <DependentUpon>WebServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Web References\Beanstream\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CCFramework.Commerce.Shipping.PurolatorService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\OptimalPayments.NetBanx\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Services.Shipping.CPServices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Services.Shipping.UPSServices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CCFramework\Model\Commerce.dbml.layout">
+      <DependentUpon>Commerce.dbml</DependentUpon>
+    </None>
+    <None Include="CCFramework\Model\Blog.dbml.layout">
+      <DependentUpon>Blog.dbml</DependentUpon>
+    </None>
+    <None Include="CCFramework\Model\Errors.dbml.layout">
+      <DependentUpon>Errors.dbml</DependentUpon>
+    </None>
+    <None Include="CCFramework\Model\CMS.dbml.layout">
+      <DependentUpon>CMS.dbml</DependentUpon>
+    </None>
+    <Content Include="App_GlobalResources\CommerceResources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CommerceResources.Designer.vb</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="CCAdmin\ContentManagement\CalendarModule\CalendarResources.resx">
+      <CustomToolNamespace>CCFramework.ContentManagement.CalendarModule</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CalendarResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\AuthenticationResources.resx">
+      <CustomToolNamespace>CCAuthentication</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AuthenticationResources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CCAdmin\Blogging\Authors.aspx" />
+    <Content Include="CCAdmin\Blogging\Blogs.aspx" />
+    <Content Include="CCAdmin\Blogging\Comment.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\Bookings.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\InstructorDetails.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\Instructors.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\Memberships.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\ProgramDetails.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\Programs.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\ScheduleDetails.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\Schedules.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\ScheduleSignups.aspx" />
+    <Content Include="CCAdmin\ContentManagement\Pages.aspx" />
+    <Content Include="CCAdmin\ContentManagement\ImageGalleries.aspx" />
+    <Content Include="CCAdmin\ContentManagement\ImageGalleryItems.aspx" />
+    <Content Include="CCAdmin\ContentManagement\Images.aspx" />
+    <Content Include="CCAdmin\ContentManagement\MenuItems.aspx" />
+    <Content Include="CCAdmin\ContentManagement\Testimonials.aspx" />
+    <Content Include="CCAdmin\ContentManagement\Rotator.aspx" />
+    <Content Include="CCAdmin\ContentManagement\Videos.aspx" />
+    <Content Include="CCAdmin\ContentManagement\PropertyModule\Features.aspx" />
+    <Content Include="CCAdmin\ContentManagement\PropertyModule\Properties.aspx" />
+    <Content Include="CCAdmin\ContentManagement\SalesLeads.aspx" />
+    <Content Include="CCAdmin\ContentManagement\UploadFiles.aspx" />
+    <Content Include="CCAdmin\DatabaseConsole.aspx" />
+    <Content Include="CCAdmin\ExcelTransfers\TransferUsers.aspx" />
+    <Content Include="CCAdmin\Maintenance.aspx" />
+    <Content Include="CCAdmin\ContentManagement\CalendarModule\MembershipStatus.aspx" />
+    <Content Include="CCAdmin\Settings.aspx" />
+    <Content Include="CCAdmin\Commerce\ClientCustom\BoxCalculator.aspx" />
+    <Content Include="CCAdmin\Commerce\Customers.aspx" />
+    <Content Include="CCAdmin\Commerce\SalesRequest.aspx" />
+    <Content Include="CCAdmin\Commerce\Print\PrintOrder.aspx" />
+    <Content Include="CCAdmin\Commerce\Reports\DailyDiscountReport.aspx" />
+    <Content Include="CCAdmin\Commerce\Reports\ProductSalesReport.aspx" />
+    <Content Include="CCAdmin\Commerce\Reports\MonthlyBranchReport.aspx" />
+    <Content Include="CCAdmin\Commerce\Reports\SalesBreakdown.aspx" />
+    <Content Include="CCAdmin\Commerce\Reports\SalesRepRequestReport.aspx" />
+    <Content Include="CCAdmin\Commerce\Shipping\FixedShippingDetails.aspx" />
+    <Content Include="CCAdmin\Commerce\ProductInfoSheet.aspx" />
+    <Content Include="CCAdmin\Commerce\ProductReviews.aspx" />
+    <Content Include="CCAdmin\Commerce\Reports\MonthlySales.aspx" />
+    <Content Include="CCAdmin\Commerce\Shipping\ShippingRateDetails.aspx" />
+    <Content Include="CCAdmin\Commerce\Shipping\ShippingZoneDetails.aspx" />
+    <Content Include="CCContentManagement\CalendarModule\Calendar.aspx" />
+    <Content Include="CCContentManagement\CalendarModule\Instructor.aspx" />
+    <Content Include="CCContentManagement\CalendarModule\Program.aspx" />
+    <Content Include="CCContentManagement\CalendarModule\ProgramList.aspx" />
+    <Content Include="CCContentManagement\ProductModule\Categories.aspx" />
+    <Content Include="CCContentManagement\ClientForms\SignUpForm.aspx" />
+    <Content Include="CCContentManagement\ClientForms\EstimateForm.aspx" />
+    <Content Include="CCContentManagement\ProductModule\Details.aspx" />
+    <Content Include="CCContentManagement\Files.aspx" />
+    <Content Include="CCContentManagement\Gallery.aspx" />
+    <Content Include="CCContentManagement\ProductModule\Products.aspx" />
+    <Content Include="CCContentManagement\PropertyModule\PropertyDetails.aspx" />
+    <Content Include="CCContentManagement\PropertyModule\PropertyResults.aspx" />
+    <Content Include="CCContentManagement\PropertyModule\PropertySearch.aspx" />
+    <Content Include="CCContentManagement\VideosModule\Videos.aspx" />
+    <Content Include="CCControls\Blogging\AuthorsControl.ascx" />
+    <Content Include="CCControls\Blogging\BlogThumbnailsControl.ascx" />
+    <Content Include="CCControls\ContentManagement\AdminMenuDisplayControl.ascx" />
+    <Content Include="CCControls\ContentManagement\RecentEventAndNewsControl.ascx" />
+    <Content Include="CCControls\ContentManagement\GalleryControls\ImageGalleryControl.ascx" />
+    <Content Include="CCControls\ContentManagement\MenuDisplayControl.ascx" />
+    <Content Include="CCControls\ContentManagement\ProductControls\ProductControl.ascx" />
+    <Content Include="CCControls\ContentManagement\NewsModule\RecentNewsControl.ascx" />
+    <Content Include="CCControls\ContentManagement\RecentVideoControl.ascx" />
+    <Content Include="CCControls\ContentManagement\TestimonialControl.ascx" />
+    <Content Include="CCControls\SearchControl.ascx" />
+    <Content Include="CCControls\Commerce\ClientControls\BoxCalculatorControl.ascx" />
+    <Content Include="CCAdmin\Commerce\Inventory.aspx" />
+    <Content Include="CCAdmin\Commerce\ClientCustom\EditMenuCategories.aspx" />
+    <Content Include="CCAdmin\Commerce\PromoCodes.aspx" />
+    <Content Include="CCAdmin\web.config" />
+    <Content Include="bin\System.Web.DataVisualization.dll" />
+    <Content Include="CCControls\Commerce\ClearanceControl.ascx" />
+    <Content Include="CCControls\Commerce\ProductControls\BrandCategoriesControl.ascx" />
+    <Content Include="CCControls\Commerce\QuickShopControl.ascx" />
+    <Content Include="CCCommerce\Distributor\DistributorOrderDetails.aspx" />
+    <Content Include="CCCommerce\Distributor\DistributorOrders.aspx" />
+    <Content Include="CCAuthentication\ChangePassword.aspx" />
+    <Content Include="CCContentManagement\ClientForms\Menu.aspx" />
+    <Content Include="CCContentManagement\EventModule\Events.aspx" />
+    <Content Include="CCContentManagement\Testimonials.aspx" />
+    <Content Include="CCContentManagement\ContentPage.aspx" />
+    <Content Include="CCContentManagement\Unsubscribe.aspx" />
+    <Content Include="CCControls\Blogging\AddCommentControl.ascx" />
+    <Content Include="CCControls\Blogging\FBCommentsControl.ascx" />
+    <Content Include="CCControls\Blogging\FBLikeBoxControl.ascx" />
+    <Content Include="CCControls\Blogging\FBLikeButtonControl.ascx" />
+    <Content Include="CCControls\Blogging\FollowUsControl.ascx" />
+    <Content Include="CCControls\Blogging\LatestBlogControl.ascx" />
+    <Content Include="CCControls\Blogging\MailingListControl.ascx" />
+    <Content Include="CCControls\Blogging\RecentBlogsControl.ascx" />
+    <Content Include="CCControls\SocialMediaControl.ascx" />
+    <Content Include="CCControls\ContentManagement\DatabaseImageControl.ascx" />
+    <Content Include="CCControls\ContentManagement\ContactControl.ascx" />
+    <Content Include="CCControls\ContentManagement\SubMenuControl.ascx" />
+    <Content Include="CCControls\HelpButtonControl.ascx" />
+    <Content Include="CCControls\ContentManagement\PageModule\NivoRotatorControl.ascx" />
+    <Content Include="CCControls\Blogging\TwitterFeedControl.ascx" />
+    <Content Include="CCControls\Commerce\AddProductReviewControl.ascx" />
+    <Content Include="CCControls\Commerce\PaybackTotalControl.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="feeds\rss.xml" />
+    <Content Include="handlers\Images\GetImage.aspx" />
+    <Content Include="CCContentManagement\Links.aspx" />
+    <Content Include="CCAuthentication\Login.aspx" />
+    <Content Include="CCAuthentication\ResetPassword.aspx" />
+    <Content Include="services\BlogCategoryService.asmx" />
+    <Content Include="services\PromoCodeService.asmx" />
+    <Content Include="sitemap.xml" />
+    <Content Include="CCCommerce\Email\DistributorOrderInvoice.aspx" />
+    <Content Include="CCCommerce\Mobile\MobileCheckout.aspx" />
+    <Content Include="CCCommerce\Mobile\MobileShoppingCart.aspx" />
+    <Content Include="CCCommerce\Mobile\MobileTest.aspx" />
+    <Content Include="CCCommerce\Mobile\MobileThankYou.aspx" />
+    <Content Include="CCCommerce\ClientPages\Forms\RequestForm.aspx" />
+    <Content Include="CCCommerce\ClientPages\Special\FreeProduct.aspx" />
+    <Content Include="CCCommerce\ClientPages\Special\RedeemForm.aspx" />
+    <None Include="CCAdmin\ExcelTransfers\Users.xlsx" />
+    <None Include="CCAdmin\Help\HelpDocument.docx" />
+    <Content Include="App_Browsers\default.browser" />
+    <Content Include="handlers\Scripts\CombineScriptHandler.ashx" />
+    <Content Include="handlers\Files\FileDownloadHandler.ashx" />
+    <Content Include="CCConfig\db.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CCMasterPages\Admin.Master" />
+    <Content Include="CCMasterPages\Print.Master" />
+    <Content Include="CCMasterPages\Email.Master" />
+    <Content Include="CCMasterPages\Home.Master" />
+    <Content Include="CCMasterPages\Main.Master" />
+    <Content Include="CCMasterPages\Mobile.Master" />
+    <None Include="CCTemplates\Admin\ckeditor\plugins\imagebrowser\README.rst" />
+    <None Include="CCTemplates\Admin\ckeditor\plugins\pbckcode\README.md" />
+    <None Include="CCTemplates\Admin\ckeditor\plugins\scayt\LICENSE.md" />
+    <None Include="CCTemplates\Admin\ckeditor\plugins\scayt\README.md" />
+    <None Include="CCTemplates\Admin\ckeditor\plugins\wsc\LICENSE.md" />
+    <None Include="CCTemplates\Admin\ckeditor\plugins\wsc\README.md" />
+    <None Include="CCTemplates\Admin\ckeditor\skins\moono\readme.md" />
+    <None Include="CCTemplates\Admin\Fonts\fontawesome-webfont.eot" />
+    <None Include="CCTemplates\Admin\Fonts\fontawesome-webfont.ttf" />
+    <None Include="CCTemplates\Admin\Fonts\fontawesome-webfont.woff" />
+    <None Include="CCTemplates\Admin\Images\CC-Logo-Template.ai" />
+    <None Include="CCTemplates\Admin\Images\icons\cc.csv.icon.ai" />
+    <None Include="CCTemplates\Admin\Images\icons\Cloud_Car-Dashboard_Icons.ai" />
+    <None Include="CCTemplates\Admin\Images\SM-ECOMM-Dashboard_ui-Concept_01.ai" />
+    <None Include="CCTemplates\Default\Images\Required\CC.commerce.check.mark.ai" />
+    <None Include="CCTemplates\Default\Images\Required\CC.commerce.delivery.van.ai" />
+    <None Include="CCTemplates\Default\Images\Required\CC.commerce.garbage.can.ai" />
+    <None Include="CCTemplates\Default\Images\Required\CC.commerce.shipping.estimate.button.ai" />
+    <None Include="CCTemplates\Default\Images\Required\rotator.arrows.ai" />
+    <None Include="CCTemplates\Default\Images\Required\SMStore-StatusBar.ai" />
+    <None Include="CCTemplates\Shared\Fonts\lbrite-webfont.eot" />
+    <None Include="CCTemplates\Shared\Fonts\lbrite-webfont.ttf" />
+    <None Include="CCTemplates\Shared\Fonts\lbrite-webfont.woff" />
+    <None Include="CCTemplates\Shared\Fonts\lbrited-webfont.eot" />
+    <None Include="CCTemplates\Shared\Fonts\lbrited-webfont.ttf" />
+    <None Include="CCTemplates\Shared\Fonts\lbrited-webfont.woff" />
+    <None Include="CCTemplates\Shared\Fonts\lbritedi-webfont.eot" />
+    <None Include="CCTemplates\Shared\Fonts\lbritedi-webfont.ttf" />
+    <None Include="CCTemplates\Shared\Fonts\lbritedi-webfont.woff" />
+    <None Include="CCTemplates\Shared\Fonts\lbritei-webfont.eot" />
+    <None Include="CCTemplates\Shared\Fonts\lbritei-webfont.ttf" />
+    <None Include="CCTemplates\Shared\Fonts\lbritei-webfont.woff" />
+    <None Include="Files\Products\BEAN_API_Integration.pdf" />
+    <Content Include="handlers\Reports\CSVReportHandler.ashx" />
+    <None Include="CCFramework\Model\Blog.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Blog.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>CCFramework.Model</CustomToolNamespace>
+    </None>
+    <None Include="CCFramework\Model\CMS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CMS1.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>CCFramework.Model</CustomToolNamespace>
+    </None>
+    <None Include="CCFramework\Model\Errors.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Errors.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>CCFramework.Model</CustomToolNamespace>
+    </None>
+    <None Include="CCFramework\Model\Commerce.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Commerce.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>CCFramework.Model</CustomToolNamespace>
+    </None>
+    <Content Include="Project Documents\SMECommerceDB.Diagram.jpg" />
+    <Content Include="CCAuthentication\Register.aspx" />
+    <Content Include="CCAdmin\Commerce\Reports\DailySales.aspx" />
+    <Content Include="Search.aspx" />
+    <Content Include="CCCommerce\Brands.aspx" />
+    <Content Include="CCCommerce\Clearance.aspx" />
+    <Content Include="CCCommerce\Details.aspx" />
+    <Content Include="CCCommerce\TopSellers.aspx" />
+    <Content Include="Project Documents\FutureUpdates.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="handlers\GetPDF.ashx" />
+    <Content Include="handlers\Images\GetPicture.ashx" />
+    <Content Include="handlers\Images\GenerateOptimizedImage.ashx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="packages.config" />
+    <None Include="Project Documents\BEAN_API_Integration.pdf" />
+    <None Include="Project Documents\Box Calculator.docx" />
+    <None Include="Project Documents\Ecommerce Future Features.xlsx" />
+    <None Include="Project Documents\FixedShipping.xlsx" />
+    <None Include="Project Documents\HelpDocument.docx" />
+    <None Include="Project Documents\US-States.csv" />
+    <None Include="Web References\Beanstream\ProcessTransaction.wsdl" />
+    <None Include="Web References\Beanstream\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="CCAuthentication\UserProfile.aspx" />
+    <Content Include="services\UserService.asmx" />
+    <None Include="Web References\CCFramework.Commerce.Shipping.PurolatorService\EstimatingService.wsdl" />
+    <None Include="Web References\CCFramework.Commerce.Shipping.PurolatorService\GetFullEstimateResponseContainer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CCFramework.Commerce.Shipping.PurolatorService\GetQuickEstimateResponseContainer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CCFramework.Commerce.Shipping.PurolatorService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\Services.Shipping.CPServices\CanadaPost.disco" />
+    <None Include="Web References\Services.Shipping.CPServices\CanadaPost.wsdl" />
+    <None Include="Web References\Services.Shipping.CPServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\Services.Shipping.CPServices\ShippingItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Services.Shipping.CPServices\ShippingRate.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Services.Shipping.UPSServices\PackageProperties.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Services.Shipping.UPSServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\Services.Shipping.UPSServices\UPSPackage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Services.Shipping.UPSServices\UPSRate.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Services.Shipping.UPSServices\UPSService.wsdl" />
+    <None Include="Web References\Services.Shipping.UPSServices\UPSService.disco" />
+    <Content Include="Web.sitemap" />
+    <Content Include="CCAdmin\ContentManagement\EventModule\Events.aspx" />
+    <Content Include="CCAdmin\ContentManagement\Links.aspx" />
+    <Content Include="CCAdmin\ContentManagement\FAQ.aspx" />
+    <Content Include="CCAdmin\Commerce\Addresses.aspx" />
+    <Content Include="CCAdmin\Commerce\Brands.aspx" />
+    <Content Include="CCAdmin\Commerce\Categories.aspx" />
+    <Content Include="CCAdmin\Commerce\Colours.aspx" />
+    <Content Include="CCAdmin\Commerce\Countries.aspx" />
+    <Content Include="CCAdmin\Commerce\Provinces.aspx" />
+    <Content Include="CCAdmin\Commerce\Sizes.aspx" />
+    <Content Include="CCAdmin\Commerce\OrderDetails.aspx" />
+    <Content Include="CCAdmin\Commerce\Orders.aspx" />
+    <Content Include="CCAdmin\Commerce\ProductDetails.aspx" />
+    <Content Include="CCAdmin\Commerce\Products.aspx" />
+    <Content Include="CCAdmin\ContentManagement\Subscribers.aspx" />
+    <Content Include="CCAdmin\Users.aspx" />
+    <Content Include="CCControls\ContentManagement\EventsModule\EventsControl.ascx" />
+    <Content Include="CCControls\LinkControl.ascx" />
+    <Content Include="CCControls\ModalPopup\ModalPopup.ascx" />
+    <Content Include="CCControls\ContentManagement\NewsModule\NewsControl.ascx" />
+    <Content Include="CCControls\SnippetControl.ascx" />
+    <Content Include="CCControls\Commerce\ProductControls\ProductControl.ascx" />
+    <Content Include="CCControls\Commerce\ShoppingDetailsControl.ascx" />
+    <Content Include="CCControls\Commerce\ProductControls\SimpleProductControl.ascx" />
+    <Content Include="CCControls\SubscribeControl.ascx" />
+    <Content Include="CCControls\ContentManagement\EventsModule\UpcomingEventsControl.ascx" />
+    <Content Include="CCControls\UploadPicture.ascx" />
+    <Content Include="CCCommerce\ProcessVBV.ashx" />
+    <Content Include="services\WebServices.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:10981/Services/CanadaPost.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Services.Shipping.CPServices\</RelPath>
+      <UpdateFromURL>http://localhost:10981/Services/CanadaPost.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SMECommerceTemplate_Services_Shipping_CPServices_CanadaPost</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:10981/Services/UPSService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Services.Shipping.UPSServices\</RelPath>
+      <UpdateFromURL>http://localhost:10981/Services/UPSService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SMECommerceTemplate_Services_Shipping_UPSServices_UPSService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://devwebservices.purolator.com/EWS/V1/Estimating/WSDLs/EstimatingService.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CCFramework.Commerce.Shipping.PurolatorService\</RelPath>
+      <UpdateFromURL>https://devwebservices.purolator.com/EWS/V1/Estimating/WSDLs/EstimatingService.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CloudCarFramework_CCFramework_Commerce_Shipping_PurolatorService_EstimatingService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://webservices.optimalpayments.com/creditcardWS/CreditCardService/v1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\OptimalPayments.NetBanx\</RelPath>
+      <UpdateFromURL>https://webservices.optimalpayments.com/creditcardWS/CreditCardService/v1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CloudCarFramework_com_optimalpayments_webservices_CreditCardServiceV1</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://www.beanstream.com/soap/ProcessTransaction.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Beanstream\</RelPath>
+      <UpdateFromURL>https://www.beanstream.com/soap/ProcessTransaction.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SMECommerceTemplate_Beanstream_ProcessTransaction</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\ar\" />
+    <Folder Include="bin\cs\" />
+    <Folder Include="bin\de\" />
+    <Folder Include="bin\es\" />
+    <Folder Include="bin\fr\" />
+    <Folder Include="bin\he\" />
+    <Folder Include="bin\hi\" />
+    <Folder Include="bin\it\" />
+    <Folder Include="bin\ja\" />
+    <Folder Include="bin\ko\" />
+    <Folder Include="bin\nl\" />
+    <Folder Include="bin\pt\" />
+    <Folder Include="bin\ru\" />
+    <Folder Include="bin\tr-TR\" />
+    <Folder Include="bin\zh-CHS\" />
+    <Folder Include="bin\zh-CHT\" />
+    <Folder Include="CCContentManagement\ConstantContact\" />
+    <Folder Include="CCControls\ContentManagement\ConstantContact\" />
+    <Folder Include="CCFramework\Commerce\BusinessProcess\PaymentProcessing\" />
+    <Folder Include="CCFramework\ContentManagement\ConstantContact\" />
+    <Folder Include="CCTemplates\Default\Fonts\" />
+    <Folder Include="CCTemplates\Shared\Styles\" />
+    <Folder Include="Downloads\" />
+    <Folder Include="Files\Uploads\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11088</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

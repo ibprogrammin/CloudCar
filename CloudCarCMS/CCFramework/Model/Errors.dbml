@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="ErrorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ErrorDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SiteErrors" Member="SiteErrors">
+    <Type Name="SiteError">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="controller" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ipaddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="helplink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="source" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="stacktrace" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="targetsite" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Application" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

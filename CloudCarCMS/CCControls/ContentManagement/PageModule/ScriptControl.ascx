@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="ScriptControl.ascx.vb" Inherits="CloudCar.CCControls.ContentManagement.PageModule.ScriptControl" %>
+<asp:Literal runat="server" ID="ScriptsLiteral" />

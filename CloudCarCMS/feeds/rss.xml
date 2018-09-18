@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" d1p1:atom="http://www.w3.org/2005/Atom" xmlns:d1p1="xmlns">
+  <channel>
+    <title>Channel Title</title>
+    <link>http://yourdomainhere.ca/feeds/rss.xml</link>
+    <description>Channel Description</description>
+    <lastBuildDate>11/18/2013 1:49:27 PM</lastBuildDate>
+    <managingEditor>email@yourdomainhere.ca (Your Name Here)</managingEditor>
+    <webMaster>webmaster.email@yourdomain.ca (Webmaster Name)</webMaster>
+    <ttl>10</ttl>
+    <language>en-us</language>
+    <copyright>Copyright 2011 Your Company Name</copyright>
+    <category>Category</category>
+    <image>
+      <title>Logo Title</title>
+      <link>http://yourdomainhere.ca</link>
+      <url>http://yourdomainhere.ca/images/design/your.logo.png</url>
+    </image>
+    <item>
+      <title>Some things should NEVER change.</title>
+      <description><![CDATA[We've lost something so fundamental in our society, and it is so easy to get back. From holding doors, to fearless hitch hiking, all the way to house calls, we need to remember why these things were done. To make people happy. Let's see how you can make your clients feel like a proper lady in the 40's.]]></description>
+      <link>http://yourdomainhere.com/Blogold-customer-service-ideas.html</link>
+      <pubDate>11/18/2013 1:49:27 PM</pubDate>
+      <guid>00000000-0000-0000-0000-000000000000</guid>
+      <comments>http://yourdomainhere.com/Blogold-customer-service-ideas.html#comments</comments>
+      <author>Melissa Height</author>
+    </item>
+    <item>
+      <title>How your website can effectively communicate with different personality types</title>
+      <description><![CDATA[Imagine yourself in another country where you didn’t speak the language, and nobody cared. That is what we are all guilty of on our websites my friends. Simply put, every one of us, no matter what mother tongue we were born with, learns with the four basic approaches in life. This is what I call my new friend KVAD and in this post you will learn how to make your website effectively communicate with these differing learning styles.]]></description>
+      <link>http://yourdomainhere.com/BlogEffective-Website-Communication.html</link>
+      <pubDate>11/18/2013 1:46:05 PM</pubDate>
+      <guid>00000000-0000-0000-0000-000000000000</guid>
+      <comments>http://yourdomainhere.com/BlogEffective-Website-Communication.html#comments</comments>
+      <author>Melissa Height</author>
+    </item>
+    <item>
+      <title>Hiring a logo design house</title>
+      <description><![CDATA[Free tips on how to hire a design house and why it will be worth the research in the end.]]></description>
+      <link>http://yourdomainhere.com/BlogHiring-A-Logo-Design-House.html</link>
+      <pubDate>11/18/2013 1:18:38 PM</pubDate>
+      <guid>00000000-0000-0000-0000-000000000000</guid>
+      <comments>http://yourdomainhere.com/BlogHiring-A-Logo-Design-House.html#comments</comments>
+      <author>Melissa Height</author>
+    </item>
+    <item>
+      <title>2010 Year of the Tiger..in a business suit!</title>
+      <description><![CDATA[New Years is soon here, which means we will all be back to business, after the hangovers of course. This blog will remind us what our companies need to be successful in 2010, so keep them in mind!]]></description>
+      <link>http://yourdomainhere.com/BlogNew-Year-Marketing-Branding-Ideas.html</link>
+      <pubDate>11/18/2013 1:15:08 PM</pubDate>
+      <guid>00000000-0000-0000-0000-000000000000</guid>
+      <comments>http://yourdomainhere.com/BlogNew-Year-Marketing-Branding-Ideas.html#comments</comments>
+      <author>Melissa Height</author>
+    </item>
+    <item>
+      <title>Fullfilling Consumer Needs at a Primative Level</title>
+      <description><![CDATA[In today's slippery slope we call marketing; we believe that as a whole, we are heading in the right direction, and it all comes down to one thing. User Experience. Which is no longer just a word used strictly by Steve Jobs and all of his techie friends. It has evolved into an all encompassing term for a simple belief, which is: human beings want to share their experiences with others, whether good or bad.]]></description>
+      <link>http://yourdomainhere.com/BlogFullfilling-Primative-Consumer-Needs.html</link>
+      <pubDate>11/18/2013 1:08:57 PM</pubDate>
+      <guid>00000000-0000-0000-0000-000000000000</guid>
+      <comments>http://yourdomainhere.com/BlogFullfilling-Primative-Consumer-Needs.html#comments</comments>
+      <author>Melissa Height</author>
+    </item>
+    <item>
+      <title>Monkey See, Monkey Do…Differently</title>
+      <description><![CDATA[This is our first blog, and hopefully it’s enough to get you hooked on what we are jabbering on about. In our blog entries we are eager to reveal some great marketing ideas that you can apply to your own business. If you have already met us, you will understand that we get so excited about what we do, we can hardly contain our creativity, even in front of you.
+So to get to the brass tax of things, as I know your time is valuable, I will start off with a few points that may shock you, or may not. Either way these things must be said.]]></description>
+      <link>http://yourdomainhere.com/BlogIntroduction-Creative-Marketing-Blog.html</link>
+      <pubDate>11/10/2013 12:47:38 PM</pubDate>
+      <guid>00000000-0000-0000-0000-000000000000</guid>
+      <comments>http://yourdomainhere.com/BlogIntroduction-Creative-Marketing-Blog.html#comments</comments>
+      <author>Melissa Height</author>
+    </item>
+  </channel>
+</rss>

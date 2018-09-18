@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="ContentControl.ascx.vb" Inherits="CloudCar.CCControls.ContentManagement.PageModule.ContentControl" %>
+<asp:PlaceHolder runat="server" ID="ContentPlaceHolder" />

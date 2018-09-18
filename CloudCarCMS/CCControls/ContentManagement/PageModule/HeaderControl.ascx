@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="HeaderControl.ascx.vb" Inherits="CloudCar.CCControls.ContentManagement.PageModule.HeaderControl" %>
+<h1><asp:Literal runat="server" ID="ContentTitleLiteral" /></h1>

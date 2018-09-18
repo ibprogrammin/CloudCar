@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CloudCarDb" ContextNamespace="CCFramework.Model" Class="ContentDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=PAGANI;Initial Catalog=CloudCarDb;Integrated Security=False;Persist Security Info=True;User ID=sa;Min Pool Size=20;MultipleActiveResultSets=True;Connect Timeout=150;Encrypt=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MainConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Faq" Member="Faqs">
+    <Type Name="Faq">
+      <Column Name="FaqID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Question" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Answer" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OrderNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_aspnet_Users" Member="vw_aspnet_Users">
+    <Type Name="vw_aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Picture" Member="Pictures">
+    <Type Name="Picture">
+      <Column Name="PictureID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PictureData" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PictureFileName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="PictureContentType" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="PictureContentLength" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Picture_Link" Member="Links" ThisKey="PictureID" OtherKey="PictureID" Type="Link" />
+      <Association Name="Picture_Testimonial" Member="Testimonials" ThisKey="PictureID" OtherKey="ImageID" Type="Testimonial" />
+      <Association Name="Picture_ImageRotator" Member="ImageRotators" ThisKey="PictureID" OtherKey="imageID" Type="ImageRotator" />
+      <Association Name="Picture_ImageGalleryItem" Member="ImageGalleryItems" ThisKey="PictureID" OtherKey="ImageID" Type="ImageGalleryItem" />
+      <Association Name="Picture_Event" Member="Events" ThisKey="PictureID" OtherKey="ImageId" Type="Event" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Link" Member="Links">
+    <Type Name="Link">
+      <Column Name="LinksID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LinksTitle" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LinkURL" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LinkNotes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PictureID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Picture_Link" Member="Picture" ThisKey="PictureID" OtherKey="PictureID" Type="Picture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ScheduleFull" Member="ScheduleFulls">
+    <Type Name="ScheduleFull">
+      <Column Name="ProgramID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProgramName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="InstructorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InstructorName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Monday" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tuesday" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Wednesday" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Thursday" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Friday" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Saturday" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Sunday" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menu" Member="Menus">
+    <Type Name="Menu">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="menu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Menu_ContentPage" Member="ContentPages" ThisKey="id" OtherKey="menuID" Type="ContentPage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Testimonial" Member="Testimonials">
+    <Type Name="Testimonial">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Quote" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Author" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ImageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Picture_Testimonial" Member="Picture" ThisKey="ImageID" OtherKey="PictureID" Type="Picture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImageRotator" Member="ImageRotators">
+    <Type Name="ImageRotator">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="subheading" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="imageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="linkurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[order]" Member="order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Picture_ImageRotator" Member="Picture" ThisKey="imageID" OtherKey="PictureID" Type="Picture" IsForeignKey="true" />
+      <Association Name="ContentPage_ImageRotator" Member="ContentPage" ThisKey="pageID" OtherKey="id" Type="ContentPage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subscription" Member="Subscriptions">
+    <Type Name="Subscription">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OptOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalesInquiry" Member="SalesInquiries">
+    <Type Name="SalesInquiry">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="inquiry" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="datesent" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="checked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileUpload" Member="FileUploads">
+    <Type Name="FileUpload">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenuItem" Member="MenuItems">
+    <Type Name="MenuItem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CssClass" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IconImageUrl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Menu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImageGallery" Member="ImageGalleries">
+    <Type Name="ImageGallery">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ImageGallery_ImageGalleryItem" Member="ImageGalleryItems" ThisKey="ID" OtherKey="GalleryID" Type="ImageGalleryItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImageGalleryItem" Member="ImageGalleryItems">
+    <Type Name="ImageGalleryItem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GalleryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ImageGallery_ImageGalleryItem" Member="ImageGallery" ThisKey="GalleryID" OtherKey="ID" Type="ImageGallery" IsForeignKey="true" />
+      <Association Name="Picture_ImageGalleryItem" Member="Picture" ThisKey="ImageID" OtherKey="PictureID" Type="Picture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Setting" Member="Settings">
+    <Type Name="Setting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Display" Type="System.String" DbType="NVarChar(125)" CanBeNull="true" />
+      <Column Name="ReadOnly" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Video" Member="Videos">
+    <Type Name="Video">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Player" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VideoID" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Keywords" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Careers" Member="Careers">
+    <Type Name="Career">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="department" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pointofcontact" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="experience" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[level]" Member="level" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="referencecode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormData" Member="FormDatas">
+    <Type Name="FormData">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FormId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Form_FormData" Member="Form" ThisKey="FormId" OtherKey="Id" Type="Form" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Events" Member="Events">
+    <Type Name="Event">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ImageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Approved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Permalink" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Picture_Event" Member="Picture" ThisKey="ImageId" OtherKey="PictureID" Type="Picture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News" Member="News">
+    <Type Name="New">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SubTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Summary" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ImageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubmitDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PublishDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Approved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Permalink" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContentPage" Member="ContentPages">
+    <Type Name="ContentPage">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="contentTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="breadcrumbTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pageTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="permalink" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="menuID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="menuOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="keywords" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pageContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="script" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="headerImageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="parentPageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="displaysubmenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MasterPageFile" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="secondaryContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ShowHeading" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CallToActionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ContentPage_ImageRotator" Member="ImageRotators" ThisKey="id" OtherKey="pageID" Type="ImageRotator" />
+      <Association Name="Menu_ContentPage" Member="Menu" ThisKey="menuID" OtherKey="id" Type="Menu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CallToAction" Member="CallToActions">
+    <Type Name="CallToAction">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Heading" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ButtonText" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LinkUrl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormField" Member="FormFields">
+    <Type Name="FormField">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FormId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DataType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ControlType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultValues" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ValidationExpression" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Watermark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FieldIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OptionData" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Form_FormField" Member="Form" ThisKey="FormId" OtherKey="Id" Type="Form" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form" Member="Forms">
+    <Type Name="Form">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CallToActionText" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CopyToAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompleteMessage" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Permalink" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Form_FormData" Member="FormDatas" ThisKey="Id" OtherKey="FormId" Type="FormData" />
+      <Association Name="Form_FormField" Member="FormFields" ThisKey="Id" OtherKey="FormId" Type="FormField" />
+    </Type>
+  </Table>
+</Database>

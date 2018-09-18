@@ -1,0 +1,14 @@
+﻿<!--
+    You can find existing browser definitions at
+    <windir>\Microsoft.NET\Framework\<ver>\CONFIG\Browsers
+-->
+<browsers>
+  <browser refID="Default">
+    <controlAdapters>
+      <adapter controlType="System.Web.UI.Page" 
+               adapterType="CloudCar.handlers.Adapters.CustomPageStateAdapter" />
+        <adapter controlType="CloudCar.RoutablePage"
+               adapterType="CloudCar.handlers.Adapters.CustomPageStateAdapter" />
+    </controlAdapters>
+  </browser>
+</browsers>

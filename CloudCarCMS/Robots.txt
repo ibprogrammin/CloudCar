@@ -1,0 +1,7 @@
+﻿User-agent: *
+Disallow: /WebResource.axd
+Disallow: /CCAdmin/
+Disallow: /CCCommerce/Checkout.aspx
+Disallow: /CCCommerce/ThankYou.aspx
+Disallow: /Shop/Checkout.html
+Disallow: /Shop/Thank-You.html

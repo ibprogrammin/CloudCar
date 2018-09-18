@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Blog">
+  <DataContextMoniker Name="/BlogDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9870c7b5-71cd-4af6-aed3-8505eb3412be" absoluteBounds="1.5, 1.625, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/BlogDataContext/Comment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0714f20-00ae-4880-a88c-601a7ca26988" absoluteBounds="1.5150000000000001, 2.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0151978a-7fc3-470c-972f-d7f0cf5649ce" absoluteBounds="7.25, 1.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/BlogDataContext/Author" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9e9e758-4ffb-471a-a159-192c7535a55c" absoluteBounds="7.2650000000000006, 2.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a379aa6a-2f4a-46bd-95af-a9d6ae54925a" absoluteBounds="4.25, 1.625, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/BlogDataContext/Blog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="548f09d4-b378-4cd2-87d0-a1a15eb42d0e" absoluteBounds="4.265, 2.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 2.89505126953125); (3.5 : 2.89505126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BlogDataContext/Blog/Blog_Comment" />
+      <nodes>
+        <classShapeMoniker Id="a379aa6a-2f4a-46bd-95af-a9d6ae54925a" />
+        <classShapeMoniker Id="9870c7b5-71cd-4af6-aed3-8505eb3412be" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 2.89505126953125); (6.25 : 2.89505126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BlogDataContext/Author/Author_Blog" />
+      <nodes>
+        <classShapeMoniker Id="0151978a-7fc3-470c-972f-d7f0cf5649ce" />
+        <classShapeMoniker Id="a379aa6a-2f4a-46bd-95af-a9d6ae54925a" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

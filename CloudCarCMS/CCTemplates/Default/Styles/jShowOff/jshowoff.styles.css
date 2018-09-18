@@ -1,0 +1,23 @@
+﻿.jshowoff {
+    margin-left: 10px; margin-bottom: 20px; position: relative; height: 420px; width: 940px;
+}
+.jshowoff li {	
+	width: 940px; height: 420px;
+}
+.jshowoff p.jshowoff-slidelinks {
+	position: absolute; right: 20px; bottom: 20px; width: 160px; text-align: right;
+}
+.jshowoff-slidelinks a, .jshowoff-controls a {
+    padding: 0px; margin-right: 7px; margin-left: 0px; left: 0; right: 0; bottom: 0; top: 0;
+	display: block; float: left; text-decoration: none; outline: none; font-size: 0;
+	background: url(/images/design/slider-nav.png) no-repeat right top; width: 33px; height: 19px;
+}
+.jshowoff-slidelinks a:hover, .jshowoff-controls a:hover {
+	background: url(/images/design/slider-nav.png) no-repeat left top;
+}
+.jshowoff-slidelinks a.jshowoff-active, .jshowoff-slidelinks a.jshowoff-active:hover {
+	background: url(/images/design/slider-nav.png) no-repeat left top; margin-right: 0px; margin-left: 7px;
+}
+
+.RotatorLeft { float: left; width: 520px; }
+.RotatorRight { float: left; width: 420px; margin-top: 60px; }

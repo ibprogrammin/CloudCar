@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="VB" CodeBehind="ProcessVBV.ashx.vb" Class="CloudCar.CCComerce.ProcessVBV" %>

@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost:10981/Services" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost:10981/Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost:10981/Services">
+      <s:element name="SetLanguage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="language" type="tns:Language" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Language">
+        <s:restriction base="s:string">
+          <s:enumeration value="English" />
+          <s:enumeration value="French" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetLanguageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllServiceTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllServiceTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllServiceTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMerchantID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMerchantIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SimpleFromAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SimpleFromAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FullFromAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provorstate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullFromAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SimpleToAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SimpleToAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FullToAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provorstate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullToAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShippingItems">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShippingItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingItemsResult" type="tns:ArrayOfShippingItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShippingItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShippingItem" type="tns:ShippingItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShippingItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReadyToShip" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetShippingRates">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShippingRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingRatesResult" type="tns:ArrayOfShippingRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShippingRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShippingRate" nillable="true" type="tns:ShippingRate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShippingRate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sequence" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShippingDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NextDayAM" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackingID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetShippingRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingRateResult" type="tns:ShippingRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRateFromID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRateFromIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRateFromIDResult" type="tns:ShippingRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemPackaged">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="length" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="readyToShip" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemPackagedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddShippingItemPackagedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="length" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShippingItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddShippingItemResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitRequest">
+        <s:complexType />
+      </s:element>
+      <s:element name="SubmitRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCPRatesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCPRatesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCPRatesTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="code" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayOfWeek">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDayOfWeekResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDayOfWeekResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SetLanguageSoapIn">
+    <wsdl:part name="parameters" element="tns:SetLanguage" />
+  </wsdl:message>
+  <wsdl:message name="SetLanguageSoapOut">
+    <wsdl:part name="parameters" element="tns:SetLanguageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllServiceTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllServiceTypes" />
+  </wsdl:message>
+  <wsdl:message name="getAllServiceTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllServiceTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMerchantIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMerchantID" />
+  </wsdl:message>
+  <wsdl:message name="SetMerchantIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMerchantIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SimpleFromAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:SimpleFromAddress" />
+  </wsdl:message>
+  <wsdl:message name="SimpleFromAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:SimpleFromAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="FullFromAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:FullFromAddress" />
+  </wsdl:message>
+  <wsdl:message name="FullFromAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:FullFromAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="SimpleToAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:SimpleToAddress" />
+  </wsdl:message>
+  <wsdl:message name="SimpleToAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:SimpleToAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="FullToAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:FullToAddress" />
+  </wsdl:message>
+  <wsdl:message name="FullToAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:FullToAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingItems" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingRates" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingRate" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRateFromIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRateFromID" />
+  </wsdl:message>
+  <wsdl:message name="GetRateFromIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRateFromIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemPackagedSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShippingItemPackaged" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemPackagedSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShippingItemPackagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShippingItem" />
+  </wsdl:message>
+  <wsdl:message name="AddShippingItemSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShippingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitRequest" />
+  </wsdl:message>
+  <wsdl:message name="SubmitRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCPRatesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCPRatesTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCPRatesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCPRatesTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductName" />
+  </wsdl:message>
+  <wsdl:message name="GetProductNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOfWeekSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDayOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="GetDayOfWeekSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDayOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CanadaPostSoap">
+    <wsdl:operation name="SetLanguage">
+      <wsdl:input message="tns:SetLanguageSoapIn" />
+      <wsdl:output message="tns:SetLanguageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllServiceTypes">
+      <wsdl:input message="tns:getAllServiceTypesSoapIn" />
+      <wsdl:output message="tns:getAllServiceTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchantID">
+      <wsdl:input message="tns:SetMerchantIDSoapIn" />
+      <wsdl:output message="tns:SetMerchantIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <wsdl:input name="SimpleFromAddress" message="tns:SimpleFromAddressSoapIn" />
+      <wsdl:output name="SimpleFromAddress" message="tns:SimpleFromAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <wsdl:input name="FullFromAddress" message="tns:FullFromAddressSoapIn" />
+      <wsdl:output name="FullFromAddress" message="tns:FullFromAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <wsdl:input name="SimpleToAddress" message="tns:SimpleToAddressSoapIn" />
+      <wsdl:output name="SimpleToAddress" message="tns:SimpleToAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <wsdl:input name="FullToAddress" message="tns:FullToAddressSoapIn" />
+      <wsdl:output name="FullToAddress" message="tns:FullToAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItems">
+      <wsdl:input message="tns:GetShippingItemsSoapIn" />
+      <wsdl:output message="tns:GetShippingItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRates">
+      <wsdl:input message="tns:GetShippingRatesSoapIn" />
+      <wsdl:output message="tns:GetShippingRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRate">
+      <wsdl:input message="tns:GetShippingRateSoapIn" />
+      <wsdl:output message="tns:GetShippingRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRateFromID">
+      <wsdl:input message="tns:GetRateFromIDSoapIn" />
+      <wsdl:output message="tns:GetRateFromIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <wsdl:input name="AddShippingItemPackaged" message="tns:AddShippingItemPackagedSoapIn" />
+      <wsdl:output name="AddShippingItemPackaged" message="tns:AddShippingItemPackagedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <wsdl:input message="tns:AddShippingItemSoapIn" />
+      <wsdl:output message="tns:AddShippingItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <wsdl:input message="tns:SubmitRequestSoapIn" />
+      <wsdl:output message="tns:SubmitRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCPRatesTable">
+      <wsdl:input message="tns:GetCPRatesTableSoapIn" />
+      <wsdl:output message="tns:GetCPRatesTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductName">
+      <wsdl:input message="tns:GetProductNameSoapIn" />
+      <wsdl:output message="tns:GetProductNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOfWeek">
+      <wsdl:input message="tns:GetDayOfWeekSoapIn" />
+      <wsdl:output message="tns:GetDayOfWeekSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CanadaPostSoap" type="tns:CanadaPostSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetLanguage">
+      <soap:operation soapAction="http://localhost:10981/Services/SetLanguage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllServiceTypes">
+      <soap:operation soapAction="http://localhost:10981/Services/getAllServiceTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchantID">
+      <soap:operation soapAction="http://localhost:10981/Services/SetMerchantID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <soap:operation soapAction="http://localhost:10981/Services/SimpleFromAddress" style="document" />
+      <wsdl:input name="SimpleFromAddress">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SimpleFromAddress">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <soap:operation soapAction="http://localhost:10981/Services/FullFromAddress" style="document" />
+      <wsdl:input name="FullFromAddress">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullFromAddress">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <soap:operation soapAction="http://localhost:10981/Services/SimpleToAddress" style="document" />
+      <wsdl:input name="SimpleToAddress">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SimpleToAddress">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <soap:operation soapAction="http://localhost:10981/Services/FullToAddress" style="document" />
+      <wsdl:input name="FullToAddress">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullToAddress">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItems">
+      <soap:operation soapAction="http://localhost:10981/Services/GetShippingItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRates">
+      <soap:operation soapAction="http://localhost:10981/Services/GetShippingRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRate">
+      <soap:operation soapAction="http://localhost:10981/Services/GetShippingRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateFromID">
+      <soap:operation soapAction="http://localhost:10981/Services/GetRateFromID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap:operation soapAction="http://localhost:10981/Services/AddShippingItemPackaged" style="document" />
+      <wsdl:input name="AddShippingItemPackaged">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemPackaged">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap:operation soapAction="http://localhost:10981/Services/AddShippingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <soap:operation soapAction="http://localhost:10981/Services/SubmitRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPRatesTable">
+      <soap:operation soapAction="http://localhost:10981/Services/GetCPRatesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductName">
+      <soap:operation soapAction="http://localhost:10981/Services/GetProductName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOfWeek">
+      <soap:operation soapAction="http://localhost:10981/Services/GetDayOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CanadaPostSoap12" type="tns:CanadaPostSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetLanguage">
+      <soap12:operation soapAction="http://localhost:10981/Services/SetLanguage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllServiceTypes">
+      <soap12:operation soapAction="http://localhost:10981/Services/getAllServiceTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchantID">
+      <soap12:operation soapAction="http://localhost:10981/Services/SetMerchantID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <soap12:operation soapAction="http://localhost:10981/Services/SimpleFromAddress" style="document" />
+      <wsdl:input name="SimpleFromAddress">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SimpleFromAddress">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFromAddress">
+      <soap12:operation soapAction="http://localhost:10981/Services/FullFromAddress" style="document" />
+      <wsdl:input name="FullFromAddress">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullFromAddress">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <soap12:operation soapAction="http://localhost:10981/Services/SimpleToAddress" style="document" />
+      <wsdl:input name="SimpleToAddress">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SimpleToAddress">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToAddress">
+      <soap12:operation soapAction="http://localhost:10981/Services/FullToAddress" style="document" />
+      <wsdl:input name="FullToAddress">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FullToAddress">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingItems">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetShippingItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRates">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetShippingRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingRate">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetShippingRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateFromID">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetRateFromID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap12:operation soapAction="http://localhost:10981/Services/AddShippingItemPackaged" style="document" />
+      <wsdl:input name="AddShippingItemPackaged">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddShippingItemPackaged">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShippingItem">
+      <soap12:operation soapAction="http://localhost:10981/Services/AddShippingItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitRequest">
+      <soap12:operation soapAction="http://localhost:10981/Services/SubmitRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCPRatesTable">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetCPRatesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductName">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetProductName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayOfWeek">
+      <soap12:operation soapAction="http://localhost:10981/Services/GetDayOfWeek" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CanadaPost">
+    <wsdl:port name="CanadaPostSoap" binding="tns:CanadaPostSoap">
+      <soap:address location="http://localhost:10981/Services/CanadaPost.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CanadaPostSoap12" binding="tns:CanadaPostSoap12">
+      <soap12:address location="http://localhost:10981/Services/CanadaPost.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

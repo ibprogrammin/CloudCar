@@ -1,0 +1,45 @@
+#SocialMediaLinks li, #MenuControl { 
+	-moz-border-radius: 2px 2px 2px 2px;
+	border-radius: 2px 2px 2px 2px;
+	-moz-box-shadow: -3px 3px 0px 0px #333;
+	-webkit-box-shadow: -3px 3px 0px 0px #333;
+	box-shadow: -3px 3px 0px 0px #333;
+}
+
+#MenuLinks, .SubMenuLinks {
+	-moz-box-shadow: -3px 3px 0px 0px #333;
+	-webkit-box-shadow: -3px 3px 0px 0px #333;
+	box-shadow: -3px 3px 0px 0px #333;	
+}
+
+.footer-wrapper { 
+	-moz-border-radius: 2px 2px 0px 0px;
+	border-radius: 2px 2px 0px 0px;
+	-moz-box-shadow: -3px 3px 0px 0px #333;
+	-webkit-box-shadow: -3px 3px 0px 0px #333;
+	box-shadow: 0px -5px 5px 0px #DDD;
+}
+
+.Video, input, textarea {
+	-moz-border-radius: 2px 2px 2px 2px;
+	border-radius: 2px 2px 2px 2px;
+}
+
+.InformationBox { 
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#SocialMediaLinks li, #MenuControl, .SubmitButton, #MenuLinks, input, textarea, a, select {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.LightBoxGallery a  {
+    -moz-box-shadow: -1px 1px 3px 3px #f3f3f3;
+	-webkit-box-shadow: -1px 1px 3px 3px #f3f3f3;
+	box-shadow: -1px 1px 3px 3px #f3f3f3; 
+}

@@ -1,0 +1,16 @@
+﻿/* Notice Panel Styles */
+.notice-panel, .tip-panel {
+    position: static;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+.tip-panel {
+    margin-top: 25px;
+}
+/* Notice Panel Styles */
+
+.user-greeting { display: none; }
+.search-control { display: none; }
